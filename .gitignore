@@ -1,0 +1,30 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Carpetas de apoyo (no subir)
+/APK/
+/DOC/
+/FIGMA/
+/apk/
+/doc/
+/figma/
+
+# Archivos sensibles/no recomendados en Android/Kotlin
+*.jks
+*.keystore
+key.properties
+keystore.properties
+signing.properties

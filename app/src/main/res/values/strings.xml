@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">REDSCATE</string>
+    <string name="profile">Perfil</string>
+    <string name="library">Biblioteca</string>
+    <string name="home">Inicio</string>
+    <string name="multisaltos">Multisaltos</string>
+    <string name="home_subtitle">Tu acompañante ideal
+en momentos de postdesastre</string>
+    <string name="stay_safe">Mantente a salvo</string>
+    <string name="ask_help">Pedir ayuda</string>
+    <string name="chat_title">CHAT</string>
+    <string name="hola">Hola</string>
+    <string name="send_time_prefix">Hora de envío:</string>
+    <string name="send_time">Hora de envío: 12:56:24 22/02/2026</string>
+    <string name="preset_answers">Respuestas Predeterminadas</string>
+    <string name="chip_emergency">Contacto Emergencia</string>
+    <string name="chip_need">Necesito ayuda</string>
+    <string name="if_you_received_help">Si ya recibiste ayuda</string>
+    <string name="im_safe">ESTOY A SALVO</string>
+    <string name="attention">¡Atención!</string>
+    <string name="leave_chat_warning">¡Estás a punto de salir de la zona
+chat de emergencia!
+
+¿Deseas continuar?</string>
+    <string name="enter_chat_warning">¡Estás a punto de entrar a la zona
+chat de emergencia!
+
+¿Deseas continuar?</string>
+    <string name="no">NO</string>
+    <string name="yes">SI</string>
+    <string name="library_upper">BIBLIOTECA</string>
+    <string name="kit_for_emergency">KIT PARA EMERGENCIAS</string>
+    <string name="food_water">ALIMENTOS
+Y AGUA</string>
+    <string name="first_aid">PRIMEROS
+AUXILIOS</string>
+    <string name="procedure_guide">GUÍA DE PROCEDIMIENTOS</string>
+    <string name="what_to_do">¿QUÉ HACER
+EN CASO DE
+EMERGENCIA?</string>
+    <string name="did_you_know">¿SABÍAS QUE?</string>
+    <string name="earthquake_categories">CATEGORÍAS
+DE SISMOS</string>
+    <string name="personal_data">DATOS PERSONALES</string>
+    <string name="sample_name">Gisel Caicedo Soler</string>
+    <string name="phone_number">Número de celular</string>
+    <string name="edit_data">EDITAR DATOS</string>
+    <string name="emergency_contact_data">DATOS CONTACTO
+EMERGENCIA</string>
+    <string name="name_and_lastname">Nombre y Apellido</string>
+    <string name="theme_mode">Tema de la app</string>
+    <string name="light_mode_icon">Claro</string>
+    <string name="dark_mode_icon">Oscuro</string>
+    <string name="close">Cerrar</string>
+    <string name="finish">FINALIZAR</string>
+</resources>

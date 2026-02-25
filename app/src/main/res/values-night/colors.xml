@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="rds_green">#00D13D</color>
+    <color name="rds_chip_green">#73B702</color>
+    <color name="rds_blue">#1CA4FF</color>
+    <color name="rds_red">#FF2338</color>
+    <color name="rds_alert_bg">#D9A30011</color>
+    <color name="rds_dark_card">#2E2E2E</color>
+    <color name="rds_orange">#C87010</color>
+    <color name="rds_theme_icon_active">#2FA8FF</color>
+    <color name="rds_theme_icon_inactive">#6E7278</color>
+</resources>
