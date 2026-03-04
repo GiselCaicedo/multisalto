@@ -53,4 +53,21 @@ EMERGENCIA</string>
     <string name="dark_mode_icon">Oscuro</string>
     <string name="close">Cerrar</string>
     <string name="finish">FINALIZAR</string>
+    <string name="open_components_showcase">Ver muestra de librería</string>
+    <string name="components_showcase_title">MUESTRA COMPONENTES</string>
+    <string name="components_list_label">Componentes detectados</string>
+    <string name="components_preview_label">Vista funcional</string>
+    <string name="components_preview_default">Selecciona un componente</string>
+    <string name="components_preview_hint">Aquí se mostrará la vista del componente.</string>
+    <string name="components_preview_none">No se detectaron carpetas generatedCode*</string>
+    <string name="components_preview_empty">No hay componentes para mostrar.</string>
+    <string name="components_preview_missing">No existe generatedCode.kt en esta carpeta.</string>
+    <string name="components_preview_title_format">Vista de %1$s</string>
+    <string name="components_preview_svg_format">Mostrando: %1$s</string>
+    <string name="components_summary_format">Se encontraron %1$d carpetas de componentes generados en assets.</string>
+    <string name="components_status_ready">Listo para mostrar · SVG: %1$d</string>
+    <string name="components_status_missing">Sin archivo generatedCode.kt</string>
+    <string name="components_preview_render_error">No se pudo renderizar este SVG.</string>
+    <string name="preview_prev">Anterior</string>
+    <string name="preview_next">Siguiente</string>
 </resources>

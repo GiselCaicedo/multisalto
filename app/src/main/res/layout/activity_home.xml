@@ -105,6 +105,18 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
+    <Button
+        android:id="@+id/showcaseButton"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_button_dark"
+        android:text="@string/open_components_showcase"
+        android:textAllCaps="true"
+        android:textColor="@color/rds_blue"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
     <Space
         android:layout_width="1dp"
         android:layout_height="0dp"
