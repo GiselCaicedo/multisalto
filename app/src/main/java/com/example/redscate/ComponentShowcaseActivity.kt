@@ -1,79 +1,100 @@
 package com.example.redscate
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.DropdownMenu
-import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Switch
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.redscate.generated.set0.AppBarSet0
-import com.example.redscate.generated.set10.CheckSet10
-import com.example.redscate.generated.set10.LoadingIndicatorSet10
-import com.example.redscate.generated.set10.ProgressIndicatorSet10
-import com.example.redscate.generated.set10.Property1Component1Set10
-import com.example.redscate.generated.set2.ButtonsIconSet2
-import com.example.redscate.generated.set1.BadgesSet1
-import com.example.redscate.generated.set2.ButtonsSet2
-import com.example.redscate.generated.set3.CardsSet3
-import com.example.redscate.generated.set4.CarouselSet4
-import com.example.redscate.generated.set5.CheckboxesSet5
-import com.example.redscate.generated.set6.ModalSet6
-import com.example.redscate.generated.set7.DividersSet7
-import com.example.redscate.generated.set8.ListsSet8
-import com.example.redscate.generated.set9.DropdownMenuSet9
-import com.example.redscate.generated.set12.SwitchSet12
-import com.example.redscate.generated.set13.TextFieldsSet13
-import com.example.redscate.generated.set14.ToolbarsSet14
-import com.example.redscate.generated.set15.RadarSet15
-import com.example.redscate.generated.set16.ActivationAnimationSet16
-import kotlin.text.RegexOption.DOT_MATCHES_ALL
+import com.redscate.uikit.components.RedscateActivationAnimation
+import com.redscate.uikit.components.RedscateAppBar
+import com.redscate.uikit.components.RedscateAppBarAction
+import com.redscate.uikit.components.RedscateAppBarConfig
+import com.redscate.uikit.components.RedscateBadge
+import com.redscate.uikit.components.RedscateBadgeStyle
+import com.redscate.uikit.components.RedscateBadgeTone
+import com.redscate.uikit.components.RedscateButton
+import com.redscate.uikit.components.RedscateButtonStyle
+import com.redscate.uikit.components.RedscateCard
+import com.redscate.uikit.components.RedscateCardAction
+import com.redscate.uikit.components.RedscateCardConfig
+import com.redscate.uikit.components.RedscateCardMetric
+import com.redscate.uikit.components.RedscateCardTone
+import com.redscate.uikit.components.RedscateCarousel
+import com.redscate.uikit.components.RedscateCarouselItem
+import com.redscate.uikit.components.RedscateCheckbox
+import com.redscate.uikit.components.RedscateCheckboxState
+import com.redscate.uikit.components.RedscateDialog
+import com.redscate.uikit.components.RedscateDialogAction
+import com.redscate.uikit.components.RedscateDialogConfig
+import com.redscate.uikit.components.RedscateDialogTone
+import com.redscate.uikit.components.RedscateDivider
+import com.redscate.uikit.components.RedscateDividerOrientation
+import com.redscate.uikit.components.RedscateDropdown
+import com.redscate.uikit.components.RedscateIndicatorState
+import com.redscate.uikit.components.RedscateList
+import com.redscate.uikit.components.RedscateListItemData
+import com.redscate.uikit.components.RedscateLoadingIndicator
+import com.redscate.uikit.components.RedscateOption
+import com.redscate.uikit.components.RedscateRadar
+import com.redscate.uikit.components.RedscateStepIndicator
+import com.redscate.uikit.components.RedscateSwitch
+import com.redscate.uikit.components.RedscateSwitchVariant
+import com.redscate.uikit.components.RedscateTextField
+import com.redscate.uikit.components.RedscateTextFieldState
+import com.redscate.uikit.components.RedscateToolbar
+import com.redscate.uikit.components.RedscateToolbarItem
+import com.redscate.uikit.components.RedscateToolbarItemState
+import com.redscate.uikit.theme.RedscateTheme
 
 class ComponentShowcaseActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val items = loadCatalog()
+        val items = listOf(
+            CatalogItem("fixed-appbar", "Coleccion 1", "AppBar", "App Bar", "Navegacion"),
+            CatalogItem("fixed-badges", "Coleccion 2", "Badges", "Badges", "General"),
+            CatalogItem("fixed-buttons", "Coleccion 3", "Buttons", "Buttons", "Botones"),
+            CatalogItem("fixed-buttons-icon", "Coleccion 3", "ButtonsIcon", "Buttons Icon", "Botones"),
+            CatalogItem("fixed-cards", "Coleccion 4", "Cards", "Cards", "Tarjetas"),
+            CatalogItem("fixed-carousel", "Coleccion 5", "Carousel", "Carousel", "Tarjetas"),
+            CatalogItem("fixed-checkboxes", "Coleccion 6", "Checkboxes", "Checkboxes", "Seleccion"),
+            CatalogItem("fixed-modal", "Coleccion 7", "Modal", "Modal", "Alertas"),
+            CatalogItem("fixed-dividers", "Coleccion 8", "Dividers", "Dividers", "General"),
+            CatalogItem("fixed-lists", "Coleccion 8", "Lists", "Lists", "General"),
+            CatalogItem("fixed-dropdown-menu", "Coleccion 8", "DropdownMenu", "Dropdown Menu", "Seleccion"),
+            CatalogItem("fixed-switch", "Coleccion 9", "Switch", "Switch", "Tema"),
+            CatalogItem("fixed-text-fields", "Coleccion 9", "TextFields", "Text fields", "Formulario"),
+            CatalogItem("fixed-toolbars", "Coleccion 10", "Toolbars", "Toolbars", "Navegacion"),
+            CatalogItem("fixed-radar", "Coleccion 11", "Radar", "Radar", "General"),
+            CatalogItem("fixed-activation-animation", "Coleccion 12", "ActivationAnimation", "Activation animation", "General"),
+            CatalogItem("fixed-loading-indicator", "Coleccion 13", "LoadingIndicator", "Loading Indicator", "General"),
+            CatalogItem("fixed-progress-indicator", "Coleccion 13", "ProgressIndicator", "Progress Indicator", "General")
+        )
+
         setContent {
-            MaterialTheme {
+            RedscateTheme {
                 ShowcaseCatalogScreen(
                     items = items,
                     onBack = { finish() }
@@ -81,181 +102,11 @@ class ComponentShowcaseActivity : ComponentActivity() {
             }
         }
     }
-
-    private fun loadCatalog(): List<CatalogItem> {
-        return listOf(
-            CatalogItem(
-                id = "fixed-appbar",
-                collectionLabel = "Coleccion 1",
-                rawName = "AppBar",
-                displayName = "App Bar",
-                category = "Navegacion"
-            ),
-            CatalogItem(
-                id = "fixed-badges",
-                collectionLabel = "Coleccion 2",
-                rawName = "Badges",
-                displayName = "Badges",
-                category = "General"
-            ),
-            CatalogItem(
-                id = "fixed-buttons",
-                collectionLabel = "Coleccion 3",
-                rawName = "Buttons",
-                displayName = "Buttons",
-                category = "Botones"
-            ),
-            CatalogItem(
-                id = "fixed-buttons-icon",
-                collectionLabel = "Coleccion 3",
-                rawName = "ButtonsIcon",
-                displayName = "Buttons Icon",
-                category = "Botones"
-            ),
-            CatalogItem(
-                id = "fixed-cards",
-                collectionLabel = "Coleccion 4",
-                rawName = "Cards",
-                displayName = "Cards",
-                category = "Tarjetas"
-            ),
-            CatalogItem(
-                id = "fixed-carousel",
-                collectionLabel = "Coleccion 5",
-                rawName = "Carousel",
-                displayName = "Carousel",
-                category = "Tarjetas"
-            ),
-            CatalogItem(
-                id = "fixed-checkboxes",
-                collectionLabel = "Coleccion 6",
-                rawName = "Checkboxes",
-                displayName = "Checkboxes",
-                category = "Seleccion"
-            ),
-            CatalogItem(
-                id = "fixed-modal",
-                collectionLabel = "Coleccion 7",
-                rawName = "Modal",
-                displayName = "Modal",
-                category = "Alertas"
-            ),
-            CatalogItem(
-                id = "fixed-dividers",
-                collectionLabel = "Coleccion 8",
-                rawName = "Dividers",
-                displayName = "Dividers",
-                category = "General"
-            ),
-            CatalogItem(
-                id = "fixed-lists",
-                collectionLabel = "Coleccion 8",
-                rawName = "Lists",
-                displayName = "Lists",
-                category = "General"
-            ),
-            CatalogItem(
-                id = "fixed-dropdown-menu",
-                collectionLabel = "Coleccion 8",
-                rawName = "DropdownMenu",
-                displayName = "Dropdown Menu",
-                category = "Seleccion"
-            ),
-            CatalogItem(
-                id = "fixed-switch",
-                collectionLabel = "Coleccion 9",
-                rawName = "Switch",
-                displayName = "Switch",
-                category = "Tema"
-            ),
-            CatalogItem(
-                id = "fixed-text-fields",
-                collectionLabel = "Coleccion 9",
-                rawName = "TextFields",
-                displayName = "Text fields",
-                category = "Formulario"
-            ),
-            CatalogItem(
-                id = "fixed-toolbars",
-                collectionLabel = "Coleccion 10",
-                rawName = "Toolbars",
-                displayName = "Toolbars",
-                category = "Navegacion"
-            ),
-            CatalogItem(
-                id = "fixed-radar",
-                collectionLabel = "Coleccion 11",
-                rawName = "Radar",
-                displayName = "Radar",
-                category = "General"
-            ),
-            CatalogItem(
-                id = "fixed-activation-animation",
-                collectionLabel = "Coleccion 12",
-                rawName = "ActivationAnimation",
-                displayName = "Activation animation",
-                category = "General"
-            ),
-            CatalogItem(
-                id = "fixed-loading-indicator",
-                collectionLabel = "Coleccion 13",
-                rawName = "LoadingIndicator",
-                displayName = "Loading Indicator",
-                category = "General"
-            ),
-            CatalogItem(
-                id = "fixed-progress-indicator",
-                collectionLabel = "Coleccion 13",
-                rawName = "ProgressIndicator",
-                displayName = "Progress Indicator",
-                category = "General"
-            )
-        )
-    }
-
-    private fun readAssetTextOrNull(path: String): String? {
-        return try {
-            assets.open(path).bufferedReader().use { it.readText() }
-        } catch (_: Exception) {
-            null
-        }
-    }
-
-    private fun humanizeName(raw: String): String {
-        val key = raw.lowercase()
-        if (key == "propiedad1clock1" || key == "loadinganimation" || key == "steps1" || key == "loading" || key == "animationloadingadvertence") {
-            return "Progress Indicator"
-        }
-        return raw.replace(Regex("([a-z])([A-Z])"), "$1 $2")
-            .replace('_', ' ')
-            .trim()
-            .replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
-    }
-
-    private fun folderOrderKey(folderName: String): Int {
-        if (folderName == "generatedCode") return 0
-        val number = Regex("""\\((\\d+)\\)""").find(folderName)?.groupValues?.getOrNull(1)?.toIntOrNull()
-        return number ?: Int.MAX_VALUE
-    }
-
-    private fun componentCategory(rawName: String): String {
-        val key = rawName.lowercase()
-        return when {
-            "appbar" in key || "header" in key -> "Navegacion"
-            "button" in key -> "Botones"
-            "dropdown" in key || "menu" in key -> "Seleccion"
-            "switch" in key || "toggle" in key -> "Tema"
-            "card" in key || "panel" in key -> "Tarjetas"
-            "alert" in key || "modal" in key || "dialog" in key -> "Alertas"
-            "input" in key || "textfield" in key || "field" in key -> "Formulario"
-            else -> "General"
-        }
-    }
 }
 
 @Composable
 private fun ShowcaseCatalogScreen(items: List<CatalogItem>, onBack: () -> Unit) {
-    var query by remember { mutableStateOf("") }
+    var query by rememberSaveable { mutableStateOf("") }
     var selected by remember(items) { mutableStateOf(items.firstOrNull()) }
     val filtered = remember(items, query) {
         items.filter {
@@ -271,405 +122,385 @@ private fun ShowcaseCatalogScreen(items: List<CatalogItem>, onBack: () -> Unit) 
         selected = filtered.first()
     }
     val selectedIndex = filtered.indexOfFirst { it.id == selected?.id }.coerceAtLeast(0)
-    val previewHeight = when {
-        selected?.rawName?.lowercase()?.contains("buttonsicon") == true -> 760.dp
-        selected?.rawName?.lowercase()?.contains("buttons") == true -> 640.dp
-        selected?.rawName?.lowercase()?.contains("cards") == true -> 980.dp
-        selected?.rawName?.lowercase()?.contains("carousel") == true -> 430.dp
-        selected?.rawName?.lowercase()?.contains("checkbox") == true -> 320.dp
-        selected?.rawName?.lowercase()?.contains("modal") == true -> 1200.dp
-        selected?.rawName?.lowercase()?.contains("dividers") == true -> 220.dp
-        selected?.rawName?.lowercase()?.contains("lists") == true -> 700.dp
-        selected?.rawName?.lowercase()?.contains("dropdownmenu") == true -> 420.dp
-        selected?.rawName?.lowercase()?.contains("switch") == true -> 300.dp
-        selected?.rawName?.lowercase()?.contains("textfields") == true -> 520.dp
-        selected?.rawName?.lowercase()?.contains("toolbar") == true -> 340.dp
-        selected?.rawName?.lowercase()?.contains("radar") == true -> 1040.dp
-        selected?.rawName?.lowercase()?.contains("activationanimation") == true -> 760.dp
-        selected?.rawName?.lowercase()?.contains("loading") == true -> 560.dp
-        else -> 260.dp
+    val previewHeight = when (selected?.rawName?.lowercase()) {
+        "cards" -> 360.dp
+        "carousel" -> 300.dp
+        "lists" -> 320.dp
+        "radar" -> 360.dp
+        "activationanimation" -> 300.dp
+        else -> 220.dp
     }
 
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = Color(0xFF090B0F)
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFF090B0F))
+            .padding(12.dp)
     ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            RedscateButton(
+                text = "Volver",
+                onClick = onBack,
+                style = RedscateButtonStyle.Neutral
+            )
+            androidx.compose.material3.Text(
+                text = "Biblioteca UI",
+                color = Color(0xFF37B2FF)
+            )
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+        androidx.compose.material3.Text(
+            text = "${items.size} componentes",
+            color = Color(0xFFB0BEC5)
+        )
+
+        Spacer(modifier = Modifier.height(8.dp))
+        RedscateTextField(
+            value = query,
+            onValueChange = { query = it },
+            label = "Buscar componente",
+            placeholder = "App Bar, Button, Radar..."
+        )
+
+        Spacer(modifier = Modifier.height(10.dp))
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .background(Color(0xFF0F1114))
+                .border(1.dp, Color(0xFF28323D))
                 .padding(12.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Button(
-                    onClick = onBack,
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF243145))
-                ) {
-                    Text("Volver")
-                }
-                Text(
-                    text = "Biblioteca UI",
-                    color = Color(0xFF37B2FF),
-                    fontWeight = FontWeight.Bold
+                RedscateButton(
+                    text = "<",
+                    onClick = {
+                        if (filtered.isNotEmpty()) {
+                            val prev = if (selectedIndex <= 0) filtered.lastIndex else selectedIndex - 1
+                            selected = filtered[prev]
+                        }
+                    },
+                    enabled = filtered.isNotEmpty(),
+                    style = RedscateButtonStyle.Neutral
+                )
+                androidx.compose.material3.Text(
+                    text = selected?.displayName ?: "Selecciona un componente",
+                    color = Color.White
+                )
+                RedscateButton(
+                    text = ">",
+                    onClick = {
+                        if (filtered.isNotEmpty()) {
+                            val next = if (selectedIndex >= filtered.lastIndex) 0 else selectedIndex + 1
+                            selected = filtered[next]
+                        }
+                    },
+                    enabled = filtered.isNotEmpty(),
+                    style = RedscateButtonStyle.Neutral
                 )
             }
 
-            Text(
-                text = "${items.size} componentes",
-                color = Color(0xFFB0BEC5),
-                modifier = Modifier.padding(top = 8.dp)
+            Spacer(modifier = Modifier.height(2.dp))
+            androidx.compose.material3.Text(
+                text = selected?.let { "${it.category} - ${it.collectionLabel}" } ?: "",
+                color = Color(0xFF37B2FF)
             )
 
-            OutlinedTextField(
-                value = query,
-                onValueChange = { query = it },
-                label = { Text("Buscar componente") },
+            Spacer(modifier = Modifier.height(12.dp))
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(top = 8.dp),
-                singleLine = true
-            )
-
-            Card(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(top = 10.dp),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFF0F1114))
+                    .height(previewHeight)
+                    .background(Color(0xFF171C22))
+                    .border(1.dp, Color(0xFF28323D))
+                    .padding(12.dp),
+                contentAlignment = Alignment.Center
             ) {
-                Column(modifier = Modifier.fillMaxSize().padding(12.dp)) {
+                ComponentPreview(selected)
+            }
+
+            Spacer(modifier = Modifier.height(12.dp))
+            LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                items(filtered, key = { it.id }) { item ->
                     Row(
                         modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically,
-                        horizontalArrangement = Arrangement.SpaceBetween
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
                     ) {
-                        Button(
-                            onClick = {
-                                if (filtered.isNotEmpty()) {
-                                    val prev = if (selectedIndex <= 0) filtered.lastIndex else selectedIndex - 1
-                                    selected = filtered[prev]
-                                }
-                            },
-                            enabled = filtered.isNotEmpty(),
-                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF243145))
-                        ) {
-                            Text("<")
-                        }
-                        Text(
-                            text = selected?.displayName ?: "Selecciona un componente",
-                            color = Color.White,
-                            fontWeight = FontWeight.Bold
+                        androidx.compose.material3.Text(
+                            text = item.displayName,
+                            color = Color.White
                         )
-                        Button(
-                            onClick = {
-                                if (filtered.isNotEmpty()) {
-                                    val next = if (selectedIndex >= filtered.lastIndex) 0 else selectedIndex + 1
-                                    selected = filtered[next]
-                                }
-                            },
-                            enabled = filtered.isNotEmpty(),
-                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF243145))
-                        ) {
-                            Text(">")
-                        }
-                    }
-                    Text(
-                        text = selected?.let { "${it.category} · ${it.collectionLabel}" } ?: "",
-                        color = Color(0xFF37B2FF),
-                        modifier = Modifier.padding(top = 2.dp)
-                    )
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(previewHeight)
-                            .padding(top = 12.dp)
-                            .background(Color(0xFF171C22))
-                            .border(1.dp, Color(0xFF28323D)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        val showedComposablePreview = GeneratedComposablePreview(selected)
-                        if (showedComposablePreview) return@Box
-                        val showedAssetPreview = GeneratedAssetPreview(selected)
-                        if (!showedAssetPreview) {
-                            ComponentPreview(selected)
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun GeneratedComposablePreview(item: CatalogItem?): Boolean {
-    val key = item?.rawName?.lowercase().orEmpty()
-    return when {
-        key.contains("appbar") || key.contains("header") -> {
-            AppBarSet0()
-            true
-        }
-        key.contains("badge") -> {
-            BadgesSet1()
-            true
-        }
-        key.contains("buttonsicon") -> {
-            ButtonsIconSet2()
-            true
-        }
-        key.contains("cards") -> {
-            CardsSet3()
-            true
-        }
-        key.contains("carousel") -> {
-            CarouselSet4()
-            true
-        }
-        key.contains("checkbox") -> {
-            CheckboxesSet5()
-            true
-        }
-        key.contains("modal") -> {
-            ModalSet6()
-            true
-        }
-        key.contains("dividers") -> {
-            DividersSet7()
-            true
-        }
-        key.contains("lists") -> {
-            ListsSet8()
-            true
-        }
-        key.contains("dropdownmenu") -> {
-            DropdownMenuSet9()
-            true
-        }
-        key.contains("switch") -> {
-            SwitchSet12()
-            true
-        }
-        key.contains("textfields") -> {
-            TextFieldsSet13()
-            true
-        }
-        key.contains("toolbar") -> {
-            ToolbarsSet14()
-            true
-        }
-        key.contains("radar") -> {
-            RadarSet15(Modifier.fillMaxSize())
-            true
-        }
-        key.contains("activationanimation") -> {
-            ActivationAnimationSet16()
-            true
-        }
-        key.contains("button") -> {
-            ButtonsSet2()
-            true
-        }
-        key == "loadingindicator" -> {
-            LoadingIndicatorSet10()
-            true
-        }
-        key == "progressindicator" -> {
-            ProgressIndicatorSet10()
-            true
-        }
-        key == "loadinganimation" || key == "steps1" || key == "loading" || key == "animationloadingadvertence" -> {
-            ProgressIndicatorSet10()
-            true
-        }
-        key == "propiedad1clock1" -> {
-            ProgressIndicatorSet10()
-            true
-        }
-        key == "property1component1" -> {
-            Property1Component1Set10()
-            true
-        }
-        key == "check" -> {
-            CheckSet10()
-            true
-        }
-        else -> false
-    }
-}
-
-@Composable
-private fun GeneratedAssetPreview(item: CatalogItem?): Boolean {
-    val rawName = item?.rawName ?: return false
-    val assetName = resolveFigmaAsset(rawName) ?: return false
-    val context = LocalContext.current
-    val bitmap = remember(assetName) {
-        runCatching {
-            context.assets.open(assetName).use { input ->
-                BitmapFactory.decodeStream(input)
-            }
-        }.getOrNull()
-    } ?: return false
-
-    Image(
-        bitmap = bitmap.asImageBitmap(),
-        contentDescription = rawName,
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(8.dp),
-        contentScale = ContentScale.Fit
-    )
-    return true
-}
-
-private fun resolveFigmaAsset(rawName: String): String? {
-    val key = rawName.lowercase()
-    val base = when {
-        key.contains("appbar") || key.contains("header") -> "App Bar.png"
-        key.contains("badge") -> "Badges.png"
-        key.contains("button") -> "Buttons.png"
-        key.contains("card") -> "Cards.png"
-        key.contains("carousel") -> "Carousel.png"
-        key.contains("checkbox") || key.contains("checkorg") || key == "check" -> "Checkboxes.png"
-        key.contains("divider") -> "Dividers.png"
-        key.contains("dropdown") || key.contains("menu") -> "Dropdown Menu.png"
-        key.contains("switch") -> "Switch.png"
-        key.contains("textfield") || key.contains("textfields") || key.contains("field") -> "Text fields.png"
-        key.contains("toolbar") -> "Toolbars.png"
-        key.contains("modal") -> "Modal.png"
-        key == "list" || key.contains("styleestandardlayoutinfo") -> "Lists.png"
-        key.contains("radar") -> "Radar.png"
-        key.contains("loading") || key.contains("clock") || key.contains("steps") -> "Progress indicators.png"
-        else -> null
-    } ?: return null
-    return "FIGMA/$base"
-}
-
-@Composable
-private fun ComponentPreview(item: CatalogItem?) {
-    val key = item?.rawName?.lowercase().orEmpty()
-    when {
-        key.contains("appbar") || key.contains("header") -> {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(56.dp)
-                    .background(Color(0xFF111317))
-                    .padding(horizontal = 14.dp),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text("SECCION", color = Color.White, fontWeight = FontWeight.Bold)
-                Row(
-                    modifier = Modifier
-                        .width(34.dp)
-                        .height(34.dp)
-                        .border(2.dp, Color(0xFFF6F6F6))
-                        .background(Color(0xFF2F2F2F)),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.gc0_icon),
-                        contentDescription = null,
-                        modifier = Modifier.fillMaxSize().padding(4.dp)
-                    )
-                }
-            }
-        }
-        key.contains("button") -> {
-            var count by remember { mutableStateOf(0) }
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
-                Button(onClick = { count++ }) { Text("Primario") }
-                Button(
-                    onClick = {},
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2F2F2F))
-                ) { Text("Secundario") }
-                Text("Clicks: $count", color = Color.White)
-            }
-        }
-        key.contains("dropdown") || key.contains("menu") -> {
-            var expanded by remember { mutableStateOf(false) }
-            var selected by remember { mutableStateOf("RH") }
-            val options = listOf("RH", "O+", "A-", "AB+")
-            Box {
-                Button(onClick = { expanded = true }) { Text(selected) }
-                DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-                    options.forEach { option ->
-                        DropdownMenuItem(
-                            text = { Text(option) },
-                            onClick = {
-                                selected = option
-                                expanded = false
+                        RedscateButton(
+                            text = "Ver",
+                            onClick = { selected = item },
+                            style = if (selected?.id == item.id) {
+                                RedscateButtonStyle.Primary
+                            } else {
+                                RedscateButtonStyle.Outline
                             }
                         )
                     }
                 }
             }
         }
-        key.contains("switch") || key.contains("toggle") -> {
-            var checked by remember { mutableStateOf(true) }
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(if (checked) "Modo oscuro" else "Modo claro", color = Color.White)
-                Spacer(modifier = Modifier.width(8.dp))
-                Switch(checked = checked, onCheckedChange = { checked = it })
-            }
-        }
-        key.contains("input") || key.contains("field") || key.contains("text") -> {
-            var value by remember { mutableStateOf("") }
-            OutlinedTextField(
-                value = value,
-                onValueChange = { value = it },
-                label = { Text("Escribe aqui") },
-                singleLine = true
+    }
+}
+
+@Composable
+private fun ComponentPreview(item: CatalogItem?) {
+    val key = item?.rawName?.lowercase().orEmpty()
+    when {
+        key.contains("appbar") -> {
+            RedscateAppBar(
+                config = RedscateAppBarConfig(
+                    title = "Inicio",
+                    subtitle = "Monitoreo",
+                    leading = RedscateAppBarAction(id = "back", label = "<"),
+                    trailing = listOf(
+                        RedscateAppBarAction(id = "info", label = "i"),
+                        RedscateAppBarAction(id = "profile", label = "P")
+                    )
+                ),
+                onActionClick = {}
             )
         }
-        key.contains("alert") || key.contains("modal") || key.contains("dialog") -> {
-            Card(
-                colors = CardDefaults.cardColors(containerColor = Color(0xFF7A1219)),
-                modifier = Modifier.padding(8.dp)
+        key.contains("badge") -> {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Column(modifier = Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text("Atencion", color = Color.White, fontWeight = FontWeight.Bold)
-                    Text("Mensaje de prueba del componente", color = Color.White)
-                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Button(onClick = {}) { Text("Aceptar") }
-                        Button(onClick = {}, colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2F2F2F))) {
-                            Text("Cancelar")
-                        }
-                    }
+                RedscateBadge(text = "Urgente", tone = RedscateBadgeTone.Danger)
+                RedscateBadge(count = 12, tone = RedscateBadgeTone.Primary)
+                RedscateBadge(style = RedscateBadgeStyle.Dot, tone = RedscateBadgeTone.Success)
+            }
+        }
+        key.contains("buttonsicon") -> {
+            var count by rememberSaveable { mutableStateOf(0) }
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                RedscateButton(text = "Alerta", onClick = { count++ }, style = RedscateButtonStyle.Danger)
+                RedscateButton(text = "Aceptar", onClick = {}, style = RedscateButtonStyle.Success)
+                androidx.compose.material3.Text("Clicks: $count", color = Color.White)
+            }
+        }
+        key.contains("button") -> {
+            var count by rememberSaveable { mutableStateOf(0) }
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                RedscateButton(text = "Primario", onClick = { count++ })
+                RedscateButton(text = "Secundario", onClick = {}, style = RedscateButtonStyle.Outline)
+                androidx.compose.material3.Text("Clicks: $count", color = Color.White)
+            }
+        }
+        key.contains("card") -> {
+            RedscateCard(
+                config = RedscateCardConfig(
+                    title = "Unidad desplegada",
+                    leadingValue = "24",
+                    leadingLabel = "Activa",
+                    headlineMetric = RedscateCardMetric("ETA", "07:15", "min"),
+                    detailMetrics = listOf(
+                        RedscateCardMetric("Zona", "Sector Norte"),
+                        RedscateCardMetric("Estado", "En ruta")
+                    ),
+                    footerAction = RedscateCardAction("open", "Ver detalle"),
+                    tone = RedscateCardTone.Accent
+                ),
+                onActionClick = {}
+            )
+        }
+        key.contains("carousel") -> {
+            var currentIndex by rememberSaveable { mutableIntStateOf(0) }
+            RedscateCarousel(
+                items = listOf(
+                    RedscateCarouselItem("1", "Puesto Alfa", "Cobertura estable", "A1"),
+                    RedscateCarouselItem("2", "Puesto Bravo", "Sin novedad", "B2"),
+                    RedscateCarouselItem("3", "Puesto Charlie", "Requiere relevo", "C3")
+                ),
+                currentIndex = currentIndex,
+                onIndexChange = { currentIndex = it }
+            )
+        }
+        key.contains("checkbox") -> {
+            var state by rememberSaveable { mutableStateOf(RedscateCheckboxState.Active) }
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                RedscateCheckbox(state = state, onStateChange = { state = it })
+                androidx.compose.material3.Text("Estado: ${state.name}", color = Color.White)
+            }
+        }
+        key.contains("modal") -> {
+            var visible by rememberSaveable { mutableStateOf(true) }
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                RedscateButton(
+                    text = if (visible) "Ocultar modal" else "Mostrar modal",
+                    onClick = { visible = !visible }
+                )
+                RedscateDialog(
+                    visible = visible,
+                    config = RedscateDialogConfig(
+                        title = "Atencion",
+                        message = "Confirma si deseas continuar con la activacion.",
+                        tone = RedscateDialogTone.Danger,
+                        actions = listOf(
+                            RedscateDialogAction("cancel", "Cancelar"),
+                            RedscateDialogAction("confirm", "Continuar", RedscateDialogTone.Success)
+                        )
+                    ),
+                    onDismissRequest = { visible = false },
+                    onActionClick = { visible = false }
+                )
+            }
+        }
+        key.contains("divider") -> {
+            Column(
+                modifier = Modifier.fillMaxWidth(),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                RedscateDivider(emphasized = true)
+                Row(
+                    modifier = Modifier.height(80.dp),
+                    horizontalArrangement = Arrangement.spacedBy(12.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    androidx.compose.material3.Text("A", color = Color.White)
+                    RedscateDivider(
+                        modifier = Modifier.height(72.dp),
+                        orientation = RedscateDividerOrientation.Vertical
+                    )
+                    androidx.compose.material3.Text("B", color = Color.White)
                 }
             }
         }
-        key.contains("card") || key.contains("panel") || key.contains("chat") -> {
-            Card(
-                colors = CardDefaults.cardColors(containerColor = Color(0xFF1B232E)),
-                modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp)
+        key.contains("list") -> {
+            RedscateList(
+                items = listOf(
+                    RedscateListItemData(
+                        id = "alpha",
+                        title = "Equipo Alfa",
+                        leadingValue = "A",
+                        leadingLabel = "Lista",
+                        primaryMetrics = listOf(RedscateCardMetric("Estado", "Disponible")),
+                        trailingMetric = RedscateCardMetric("ETA", "4m"),
+                        action = RedscateCardAction("assign", "Asignar")
+                    ),
+                    RedscateListItemData(
+                        id = "bravo",
+                        title = "Equipo Bravo",
+                        leadingValue = "B",
+                        leadingLabel = "Lista",
+                        primaryMetrics = listOf(RedscateCardMetric("Estado", "Ocupado")),
+                        trailingMetric = RedscateCardMetric("ETA", "12m"),
+                        tone = RedscateCardTone.Success
+                    )
+                ),
+                modifier = Modifier.heightIn(max = 280.dp)
+            )
+        }
+        key.contains("dropdown") -> {
+            var expanded by rememberSaveable { mutableStateOf(false) }
+            var selectedKey by rememberSaveable { mutableStateOf("rh") }
+            RedscateDropdown(
+                selectedKey = selectedKey,
+                options = listOf(
+                    RedscateOption("rh", "RH"),
+                    RedscateOption("o+", "O+"),
+                    RedscateOption("a-", "A-"),
+                    RedscateOption("ab+", "AB+")
+                ),
+                expanded = expanded,
+                onExpandedChange = { expanded = it },
+                onOptionSelected = { selectedKey = it.key },
+                label = "Tipo de sangre"
+            )
+        }
+        key.contains("switch") -> {
+            var checked by rememberSaveable { mutableStateOf(true) }
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Column(modifier = Modifier.padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                    Text("Tarjeta de contenido", color = Color.White, fontWeight = FontWeight.SemiBold)
-                    Text("Vista util para revisar jerarquia visual.", color = Color(0xFFB0BEC5))
-                    Button(onClick = {}) { Text("Accion") }
-                }
+                RedscateSwitch(
+                    checked = checked,
+                    onCheckedChange = { checked = it },
+                    variant = RedscateSwitchVariant.LeftAccent
+                )
+                androidx.compose.material3.Text(
+                    text = if (checked) "Modo oscuro" else "Modo claro",
+                    color = Color.White
+                )
             }
+        }
+        key.contains("text") || key.contains("field") -> {
+            var value by rememberSaveable { mutableStateOf("") }
+            RedscateTextField(
+                value = value,
+                onValueChange = { value = it },
+                label = "Mensaje",
+                placeholder = "Escribe aqui",
+                supportingText = "Campo de ejemplo",
+                state = if (value.length > 8) RedscateTextFieldState.Focused else RedscateTextFieldState.Default
+            )
+        }
+        key.contains("toolbar") -> {
+            RedscateToolbar(
+                items = listOf(
+                    RedscateToolbarItem("map", "Mapa", state = RedscateToolbarItemState.Active),
+                    RedscateToolbarItem("chat", "Chat"),
+                    RedscateToolbarItem("sos", "SOS"),
+                    RedscateToolbarItem("off", "Off", state = RedscateToolbarItemState.Disabled)
+                ),
+                onItemClick = {}
+            )
+        }
+        key.contains("radar") -> {
+            var selectedDistance by rememberSaveable { mutableStateOf(100) }
+            RedscateRadar(
+                modifier = Modifier.fillMaxWidth(),
+                selectedDistance = selectedDistance,
+                distanceOptions = listOf(50, 100, 250),
+                onDistanceSelected = { selectedDistance = it }
+            )
+        }
+        key.contains("activationanimation") -> {
+            RedscateActivationAnimation(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(240.dp)
+            )
+        }
+        key == "loadingindicator" -> {
+            RedscateLoadingIndicator(
+                states = listOf(
+                    RedscateIndicatorState.Success,
+                    RedscateIndicatorState.Warning,
+                    RedscateIndicatorState.Inactive
+                )
+            )
+        }
+        key == "progressindicator" -> {
+            RedscateStepIndicator(totalSteps = 4, currentStep = 3)
         }
         else -> {
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(
-                    text = item?.displayName
-                        ?: "Componente",
-                    color = Color.White,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = "Vista funcional de referencia",
-                    color = Color(0xFF90A4AE),
-                    modifier = Modifier.padding(top = 4.dp)
-                )
-                Button(onClick = {}, modifier = Modifier.padding(top = 10.dp)) {
-                    Text("Probar")
-                }
-            }
+            RedscateButton(text = item?.displayName ?: "Probar", onClick = {})
         }
     }
 }

@@ -1,7 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
+    id("maven-publish")
 }
+
+group = providers.gradleProperty("GROUP").orElse("com.redscate").get()
+version = providers.gradleProperty("VERSION_NAME").orElse("1.0.0").get()
 
 android {
     namespace = "com.redscate.uikit"
@@ -18,6 +22,12 @@ android {
 
     buildFeatures {
         compose = true
+    }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
     }
 
     compileOptions {
@@ -40,4 +50,47 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = project.group.toString()
+            artifactId = providers.gradleProperty("POM_ARTIFACT_ID").orElse("uikit").get()
+            version = project.version.toString()
+
+            afterEvaluate {
+                from(components["release"])
+            }
+
+            pom {
+                name.set(providers.gradleProperty("POM_NAME").orElse("Redscate UI Kit"))
+                description.set(
+                    providers.gradleProperty("POM_DESCRIPTION")
+                        .orElse("Composable Redscate design system components for Android.")
+                )
+            }
+        }
+    }
+
+    repositories {
+        mavenLocal()
+
+        val publishUrl = providers.gradleProperty("mavenPublishUrl")
+            .orElse(providers.environmentVariable("MAVEN_PUBLISH_URL"))
+        if (publishUrl.isPresent) {
+            maven {
+                name = "remote"
+                url = uri(publishUrl.get())
+                credentials {
+                    username = providers.gradleProperty("mavenPublishUsername")
+                        .orElse(providers.environmentVariable("MAVEN_PUBLISH_USERNAME"))
+                        .orNull
+                    password = providers.gradleProperty("mavenPublishPassword")
+                        .orElse(providers.environmentVariable("MAVEN_PUBLISH_PASSWORD"))
+                        .orNull
+                }
+            }
+        }
+    }
 }

@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "REDSCATE"
 include(":app")
+include(":ui-kit")
