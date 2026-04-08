@@ -27,7 +27,7 @@ private data class CarouselPreviewCard(
     val title: String,
 )
 
-private val SampleCarouselCards = listOf(
+private val CarouselSampleItems = listOf(
     CarouselPreviewCard("Elemento 1"),
     CarouselPreviewCard("Elemento 2"),
     CarouselPreviewCard("Elemento 3"),
@@ -35,9 +35,9 @@ private val SampleCarouselCards = listOf(
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionBosqueCarouselPreview() {
+private fun GenericCarouselActionsPreview() {
     CarouselPreviewContainer {
-        val items = remember { SampleCarouselCards }
+        val items = remember { CarouselSampleItems }
         val pagerState = rememberPagerState(initialPage = 0) { items.size }
         UanCarousel(
             items = items,
@@ -78,9 +78,9 @@ private fun EvacuacionBosqueCarouselPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun BusquedaSecuencialCarouselPreview() {
+private fun GenericCarouselPagerPreview() {
     CarouselPreviewContainer {
-        val items = remember { SampleCarouselCards }
+        val items = remember { CarouselSampleItems }
         val pagerState = rememberPagerState(initialPage = 1) { items.size }
         UanCarousel(
             items = items,
@@ -95,9 +95,9 @@ private fun BusquedaSecuencialCarouselPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PuntoSeguroConfirmadoCarouselPreview() {
+private fun GenericCarouselConfirmationPreview() {
     CarouselPreviewContainer {
-        val items = remember { SampleCarouselCards }
+        val items = remember { CarouselSampleItems }
         val pagerState = rememberPagerState(initialPage = 2) { items.size }
         UanCarousel(
             items = items,
@@ -126,9 +126,9 @@ private fun PuntoSeguroConfirmadoCarouselPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoDeIncendioCarouselPreview() {
+private fun GenericCarouselAlertPreview() {
     CarouselPreviewContainer {
-        val items = remember { SampleCarouselCards }
+        val items = remember { CarouselSampleItems }
         val pagerState = rememberPagerState(initialPage = 0) { items.size }
         UanCarousel(
             items = items,
@@ -157,9 +157,9 @@ private fun RiesgoDeIncendioCarouselPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun GaleriaFueraDeServicioCarouselPreview() {
+private fun GenericCarouselDisabledPreview() {
     CarouselPreviewContainer {
-        val items = remember { SampleCarouselCards }
+        val items = remember { CarouselSampleItems }
         val pagerState = rememberPagerState(initialPage = 0) { items.size }
         UanCarousel(
             items = items,

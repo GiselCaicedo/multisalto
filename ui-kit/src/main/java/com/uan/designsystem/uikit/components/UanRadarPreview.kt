@@ -18,7 +18,7 @@ import com.uan.designsystem.uikit.foundation.UanTone
 import com.uan.designsystem.uikit.theme.UanTheme
 import com.uan.designsystem.uikit.theme.UanThemeTokens
 
-private val RadarStandardRanges = listOf(
+private val RadarSampleRanges = listOf(
     UanRadarRange(distanceMeters = 50f, label = "50m"),
     UanRadarRange(distanceMeters = 100f, label = "100m"),
     UanRadarRange(distanceMeters = 150f, label = "150m"),
@@ -27,9 +27,9 @@ private val RadarStandardRanges = listOf(
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun BusquedaNocturnaInactivaPreview() {
+private fun GenericRadarInactivePreview() {
     RadarPreviewContainer {
-        val ranges = remember { RadarStandardRanges }
+        val ranges = remember { RadarSampleRanges }
         UanRadar(
             distanceMeters = 120f,
             distanceRanges = ranges,
@@ -42,9 +42,9 @@ private fun BusquedaNocturnaInactivaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun SenderistaUbicadoActivoPreview() {
+private fun GenericRadarActivePreview() {
     RadarPreviewContainer {
-        val ranges = remember { RadarStandardRanges }
+        val ranges = remember { RadarSampleRanges }
         UanRadar(
             distanceMeters = 85f,
             distanceRanges = ranges,
@@ -57,9 +57,9 @@ private fun SenderistaUbicadoActivoPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun AproximacionConEscalasPreview() {
+private fun GenericRadarScalesPreview() {
     RadarPreviewContainer {
-        val ranges = remember { RadarStandardRanges }
+        val ranges = remember { RadarSampleRanges }
         UanRadar(
             distanceMeters = 48f,
             distanceRanges = ranges,
@@ -73,9 +73,9 @@ private fun AproximacionConEscalasPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoInmediatoCriticoPreview() {
+private fun GenericRadarCriticalPreview() {
     RadarPreviewContainer {
-        val ranges = remember { RadarStandardRanges }
+        val ranges = remember { RadarSampleRanges }
         UanRadar(
             distanceMeters = 18f,
             distanceRanges = ranges,
@@ -97,9 +97,9 @@ private fun RiesgoInmediatoCriticoPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ZonaBloqueadaDeshabilitadaPreview() {
+private fun GenericRadarDisabledPreview() {
     RadarPreviewContainer {
-        val ranges = remember { RadarStandardRanges }
+        val ranges = remember { RadarSampleRanges }
         UanRadar(
             distanceMeters = 200f,
             distanceRanges = ranges,

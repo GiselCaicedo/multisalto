@@ -21,7 +21,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun VisionNocturnaActivaPreview() {
+private fun GenericSwitchOnPreview() {
     SwitchPreviewContainer {
         UanSwitch(
             checked = true,
@@ -35,7 +35,7 @@ private fun VisionNocturnaActivaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun IluminacionManualDesactivadaPreview() {
+private fun GenericSwitchOffPreview() {
     SwitchPreviewContainer {
         UanSwitch(
             checked = false,
@@ -49,7 +49,7 @@ private fun IluminacionManualDesactivadaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun AlertaQuimicaCriticaPreview() {
+private fun GenericSwitchAlertPreview() {
     SwitchPreviewContainer {
         val tokens = UanThemeTokens.current
         UanSwitch(
@@ -78,7 +78,7 @@ private fun AlertaQuimicaCriticaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RadioOperativaActivaPreview() {
+private fun GenericSwitchSuccessPreview() {
     SwitchPreviewContainer {
         val tokens = UanThemeTokens.current
         UanSwitch(
@@ -107,7 +107,7 @@ private fun RadioOperativaActivaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun SensorDeshabilitadoPreview() {
+private fun GenericSwitchDisabledPreview() {
     SwitchPreviewContainer {
         val tokens = UanThemeTokens.current
         UanSwitch(

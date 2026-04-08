@@ -18,7 +18,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RutaSeguraBadgePreview() {
+private fun GenericBadgeSolidPreview() {
     BadgePreviewContainer {
         UanBadge(
             text = "ETIQUETA",
@@ -30,7 +30,7 @@ private fun RutaSeguraBadgePreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteMonitorizadoBadgePreview() {
+private fun GenericBadgeTonalPreview() {
     BadgePreviewContainer {
         val tokens = UanThemeTokens.current
         UanBadge(
@@ -50,7 +50,7 @@ private fun PacienteMonitorizadoBadgePreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionPendienteBadgePreview() {
+private fun GenericBadgeOutlinePreview() {
     BadgePreviewContainer {
         UanBadge(
             text = "PENDIENTE",
@@ -62,7 +62,7 @@ private fun EvacuacionPendienteBadgePreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoQuimicoBadgePreview() {
+private fun GenericBadgeAlertPreview() {
     BadgePreviewContainer {
         val tokens = UanThemeTokens.current
         UanBadge(
@@ -82,7 +82,7 @@ private fun RiesgoQuimicoBadgePreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ConexionCaidaBadgePreview() {
+private fun GenericBadgeDisabledPreview() {
     BadgePreviewContainer {
         UanBadge(
             text = "SIN DATOS",

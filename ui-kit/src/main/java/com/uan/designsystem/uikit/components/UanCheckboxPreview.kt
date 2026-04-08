@@ -19,7 +19,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RutaVerificadaUncheckedPreview() {
+private fun GenericCheckboxUncheckedPreview() {
     CheckboxPreviewContainer {
         UanCheckbox(
             state = UanCheckboxState.Unchecked,
@@ -33,7 +33,7 @@ private fun RutaVerificadaUncheckedPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun BotiquinInspeccionUncheckedPreview() {
+private fun GenericCheckboxSecondaryUncheckedPreview() {
     CheckboxPreviewContainer {
         UanCheckbox(
             state = UanCheckboxState.Unchecked,
@@ -47,7 +47,7 @@ private fun BotiquinInspeccionUncheckedPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionConfirmadaCheckedPreview() {
+private fun GenericCheckboxCheckedPreview() {
     CheckboxPreviewContainer {
         val tokens = UanThemeTokens.current
         UanCheckbox(
@@ -69,7 +69,7 @@ private fun EvacuacionConfirmadaCheckedPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TriageParcialIndeterminatePreview() {
+private fun GenericCheckboxIndeterminatePreview() {
     CheckboxPreviewContainer {
         val tokens = UanThemeTokens.current
         UanCheckbox(
@@ -92,7 +92,7 @@ private fun TriageParcialIndeterminatePreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PeligroElectricoCriticoPreview() {
+private fun GenericCheckboxDisabledPreview() {
     CheckboxPreviewContainer {
         val tokens = UanThemeTokens.current
         UanCheckbox(

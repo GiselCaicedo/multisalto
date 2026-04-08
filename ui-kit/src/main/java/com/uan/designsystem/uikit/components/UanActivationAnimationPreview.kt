@@ -15,7 +15,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ActivacionDEAPreview() {
+private fun GenericActivationPreview() {
     ActivationPreviewContainer {
         UanActivationAnimation(
             active = true,
@@ -27,7 +27,7 @@ private fun ActivacionDEAPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ActivacionEvacuacionPreview() {
+private fun GenericActivationVariantPreview() {
     ActivationPreviewContainer {
         UanActivationAnimation(
             active = true,
@@ -39,7 +39,7 @@ private fun ActivacionEvacuacionPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ActivacionBusquedaPreview() {
+private fun GenericActivationSearchPreview() {
     ActivationPreviewContainer {
         UanActivationAnimation(
             active = true,
@@ -52,7 +52,7 @@ private fun ActivacionBusquedaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ActivacionCriticaPreview() {
+private fun GenericActivationCriticalPreview() {
     ActivationPreviewContainer {
         UanActivationAnimation(
             active = true,
@@ -71,7 +71,7 @@ private fun ActivacionCriticaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ActivacionInactivaPreview() {
+private fun GenericActivationInactivePreview() {
     ActivationPreviewContainer {
         UanActivationAnimation(
             active = false,

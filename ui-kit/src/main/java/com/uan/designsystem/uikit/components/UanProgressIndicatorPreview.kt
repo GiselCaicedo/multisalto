@@ -13,7 +13,7 @@ import com.uan.designsystem.uikit.foundation.UanTone
 import com.uan.designsystem.uikit.theme.UanTheme
 import com.uan.designsystem.uikit.theme.UanThemeTokens
 
-private val ParoCardiacoStatusSteps = listOf(
+private val StatusStepsCritical = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
@@ -31,7 +31,7 @@ private val ParoCardiacoStatusSteps = listOf(
     ),
 )
 
-private val EvacuacionWarningSteps = listOf(
+private val StatusStepsWarning = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
@@ -49,7 +49,7 @@ private val EvacuacionWarningSteps = listOf(
     ),
 )
 
-private val PacienteEstabilizadoSteps = listOf(
+private val StatusStepsNumbered = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
@@ -72,7 +72,7 @@ private val PacienteEstabilizadoSteps = listOf(
     ),
 )
 
-private val TrasladoLoadingSteps = listOf(
+private val StatusStepsLoading = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
@@ -90,7 +90,7 @@ private val TrasladoLoadingSteps = listOf(
     ),
 )
 
-private val ZonaRestringidaDisabledSteps = listOf(
+private val StatusStepsDisabled = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
@@ -110,9 +110,9 @@ private val ZonaRestringidaDisabledSteps = listOf(
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ParoCardiacoIndicadorCriticoPreview() {
+private fun GenericProgressCriticalPreview() {
     ProgressIndicatorPreviewContainer {
-        val steps = remember { ParoCardiacoStatusSteps }
+        val steps = remember { StatusStepsCritical }
         UanProgressIndicator(
             steps = steps,
             variant = UanProgressIndicatorVariant.Status,
@@ -123,9 +123,9 @@ private fun ParoCardiacoIndicadorCriticoPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionIndicadorAdvertenciaPreview() {
+private fun GenericProgressWarningPreview() {
     ProgressIndicatorPreviewContainer {
-        val steps = remember { EvacuacionWarningSteps }
+        val steps = remember { StatusStepsWarning }
         UanProgressIndicator(
             steps = steps,
             variant = UanProgressIndicatorVariant.Status,
@@ -136,9 +136,9 @@ private fun EvacuacionIndicadorAdvertenciaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteEstabilizadoNumeradoPreview() {
+private fun GenericProgressNumberedPreview() {
     ProgressIndicatorPreviewContainer {
-        val steps = remember { PacienteEstabilizadoSteps }
+        val steps = remember { StatusStepsNumbered }
         UanProgressIndicator(
             steps = steps,
             variant = UanProgressIndicatorVariant.Numbered,
@@ -149,9 +149,9 @@ private fun PacienteEstabilizadoNumeradoPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun AmbulanciaEnCaminoLoadingPreview() {
+private fun GenericProgressLoadingPreview() {
     ProgressIndicatorPreviewContainer {
-        val steps = remember { TrasladoLoadingSteps }
+        val steps = remember { StatusStepsLoading }
         UanProgressIndicator(
             steps = steps,
             variant = UanProgressIndicatorVariant.Status,
@@ -162,9 +162,9 @@ private fun AmbulanciaEnCaminoLoadingPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ZonaRestringidaDeshabilitadoPreview() {
+private fun GenericProgressDisabledPreview() {
     ProgressIndicatorPreviewContainer {
-        val steps = remember { ZonaRestringidaDisabledSteps }
+        val steps = remember { StatusStepsDisabled }
         UanProgressIndicator(
             steps = steps,
             variant = UanProgressIndicatorVariant.Status,

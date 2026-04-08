@@ -19,7 +19,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionListPreview() {
+private fun GenericListPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
@@ -46,7 +46,7 @@ private fun EvacuacionListPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteListPreview() {
+private fun GenericListTonalPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
@@ -65,7 +65,7 @@ private fun PacienteListPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoListPreview() {
+private fun GenericListAlertPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
@@ -92,7 +92,7 @@ private fun RiesgoListPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RadioListPreview() {
+private fun GenericListActionPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
@@ -111,7 +111,7 @@ private fun RadioListPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun DisabledListPreview() {
+private fun GenericListDisabledPreview() {
     ListsPreviewContainer {
         UanLists(
             title = "Elemento 5",

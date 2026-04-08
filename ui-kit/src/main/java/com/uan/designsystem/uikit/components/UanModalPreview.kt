@@ -34,7 +34,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun AlertDangerModalPreview() {
+private fun GenericModalDangerPreview() {
     UanTheme {
         UanModalContentPreview(
             title = "Titulo",
@@ -61,7 +61,7 @@ private fun AlertDangerModalPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun AlertSuccessModalPreview() {
+private fun GenericModalSuccessPreview() {
     UanTheme {
         UanModalContentPreview(
             title = "Titulo",
@@ -88,7 +88,7 @@ private fun AlertSuccessModalPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ContentModalWithDismissPreview() {
+private fun GenericModalContentPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         UanModalContentPreview(
@@ -136,7 +136,7 @@ private fun ContentModalWithDismissPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun MediaCarouselModalPreview() {
+private fun GenericModalCarouselPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         val pageCount = 4
@@ -232,7 +232,7 @@ private fun MediaCarouselModalPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun CriticalAlertModalPreview() {
+private fun GenericModalCriticalPreview() {
     UanTheme {
         UanModalContentPreview(
             title = "Titulo",
@@ -259,7 +259,7 @@ private fun CriticalAlertModalPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun DisabledActionsModalPreview() {
+private fun GenericModalDisabledPreview() {
     UanTheme {
         UanModalContentPreview(
             title = "Confirmar accion",
@@ -287,7 +287,7 @@ private fun DisabledActionsModalPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun LoadingActionModalPreview() {
+private fun GenericModalLoadingPreview() {
     UanTheme {
         UanModalContentPreview(
             title = "Cargando",

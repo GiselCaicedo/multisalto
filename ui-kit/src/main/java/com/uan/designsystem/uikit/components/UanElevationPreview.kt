@@ -15,7 +15,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ElevacionParoCardiacoPreview() {
+private fun GenericElevationSolidPreview() {
     ElevationPreviewContainer {
         UanElevation(
             text = "Nivel 1",
@@ -27,7 +27,7 @@ private fun ElevacionParoCardiacoPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ElevacionEvacuacionPreview() {
+private fun GenericElevationSurfacePreview() {
     ElevationPreviewContainer {
         UanElevation(
             text = "Nivel 2",
@@ -39,7 +39,7 @@ private fun ElevacionEvacuacionPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ElevacionBusquedaPreview() {
+private fun GenericElevationMutedPreview() {
     ElevationPreviewContainer {
         UanElevation(
             text = "Nivel 3",
@@ -51,7 +51,7 @@ private fun ElevacionBusquedaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ElevacionPacientePreview() {
+private fun GenericElevationCardPreview() {
     ElevationPreviewContainer {
         UanElevation(
             text = "Nivel 4",
@@ -70,7 +70,7 @@ private fun ElevacionPacientePreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ElevacionDisabledPreview() {
+private fun GenericElevationDisabledPreview() {
     ElevationPreviewContainer {
         UanElevation(
             text = "Deshabilitado",

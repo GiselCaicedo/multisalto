@@ -20,7 +20,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionDropdownPreview() {
+private fun GenericDropdownPreview() {
     DropdownMenuPreviewContainer {
         val items = remember {
             listOf(
@@ -35,7 +35,7 @@ private fun EvacuacionDropdownPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TriageDropdownPreview() {
+private fun GenericDropdownWarningPreview() {
     DropdownMenuPreviewContainer {
         val tokens = UanThemeTokens.current
         val items = remember {
@@ -62,7 +62,7 @@ private fun TriageDropdownPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteDropdownPreview() {
+private fun GenericDropdownSuccessPreview() {
     DropdownMenuPreviewContainer {
         val tokens = UanThemeTokens.current
         val items = remember {
@@ -88,7 +88,7 @@ private fun PacienteDropdownPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoDropdownPreview() {
+private fun GenericDropdownCriticalPreview() {
     DropdownMenuPreviewContainer {
         val tokens = UanThemeTokens.current
         val items = remember {
@@ -114,7 +114,7 @@ private fun RiesgoDropdownPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun DisabledDropdownPreview() {
+private fun GenericDropdownDisabledPreview() {
     DropdownMenuPreviewContainer {
         val items = remember {
             listOf(

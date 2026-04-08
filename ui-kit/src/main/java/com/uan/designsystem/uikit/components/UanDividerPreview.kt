@@ -18,7 +18,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionDividerPreview() {
+private fun GenericDividerPreview() {
     DividerPreviewContainer {
         UanDivider(tone = UanTone.Info)
     }
@@ -26,7 +26,7 @@ private fun EvacuacionDividerPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteDividerPreview() {
+private fun GenericDividerInsetPreview() {
     DividerPreviewContainer {
         UanDivider(tone = UanTone.Success, inset = 16.dp)
     }
@@ -34,7 +34,7 @@ private fun PacienteDividerPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoDividerPreview() {
+private fun GenericDividerEmphasisPreview() {
     DividerPreviewContainer {
         UanDivider(tone = UanTone.Critical)
     }
@@ -42,7 +42,7 @@ private fun RiesgoDividerPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun VerticalDividerPreview() {
+private fun GenericVerticalDividerPreview() {
     DividerPreviewContainer {
         Row(
             modifier = Modifier.height(48.dp),
@@ -57,7 +57,7 @@ private fun VerticalDividerPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun DisabledDividerPreview() {
+private fun GenericDividerDisabledPreview() {
     DividerPreviewContainer {
         UanDivider(enabled = false, tone = UanTone.Danger)
     }

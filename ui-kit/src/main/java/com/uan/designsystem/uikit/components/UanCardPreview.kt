@@ -20,7 +20,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteCardPreview() {
+private fun GenericCardPreview() {
     CardPreviewContainer {
         UanCard(
             title = "Tarjeta informativa",
@@ -32,7 +32,7 @@ private fun PacienteCardPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RutaEvacuacionCardPreview() {
+private fun GenericCardWithFooterPreview() {
     CardPreviewContainer {
         UanCard(
             title = "Tarjeta con etiqueta",
@@ -51,7 +51,7 @@ private fun RutaEvacuacionCardPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoElectricoCardPreview() {
+private fun GenericCardAlertPreview() {
     CardPreviewContainer {
         val tokens = UanThemeTokens.current
         UanCard(
@@ -71,7 +71,7 @@ private fun RiesgoElectricoCardPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ChecklistOperativoCardPreview() {
+private fun GenericCardChecklistPreview() {
     CardPreviewContainer {
         val tokens = UanThemeTokens.current
         UanCard(
@@ -91,7 +91,7 @@ private fun ChecklistOperativoCardPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun SensorInactivoCardPreview() {
+private fun GenericCardDisabledPreview() {
     CardPreviewContainer {
         UanCard(
             title = "Tarjeta deshabilitada",

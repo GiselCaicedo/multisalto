@@ -22,7 +22,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionExpandidaPreview() {
+private fun GenericSheetExpandedPreview() {
     SheetPreviewContainer {
         UanSheet(
             expanded = true,
@@ -41,7 +41,7 @@ private fun EvacuacionExpandidaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TriageColapsadoPreview() {
+private fun GenericSheetCollapsedPreview() {
     SheetPreviewContainer {
         UanSheet(
             expanded = false,
@@ -59,7 +59,7 @@ private fun TriageColapsadoPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoQuimicoAdvertenciaPreview() {
+private fun GenericSheetAlertPreview() {
     SheetPreviewContainer {
         UanSheet(
             expanded = true,
@@ -83,7 +83,7 @@ private fun RiesgoQuimicoAdvertenciaPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteEstabilizadoInfoPreview() {
+private fun GenericSheetInfoPreview() {
     SheetPreviewContainer {
         UanSheet(
             expanded = true,
@@ -102,7 +102,7 @@ private fun PacienteEstabilizadoInfoPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun SensorFueraDeServicioPreview() {
+private fun GenericSheetDisabledPreview() {
     SheetPreviewContainer {
         UanSheet(
             expanded = false,

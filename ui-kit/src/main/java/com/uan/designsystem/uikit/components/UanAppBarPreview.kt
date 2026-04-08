@@ -20,7 +20,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun EvacuacionAppBarPreview() {
+private fun GenericAppBarPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(
@@ -44,7 +44,7 @@ private fun EvacuacionAppBarPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ParoCardiacoAppBarPreview() {
+private fun GenericAppBarActionPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(
@@ -68,7 +68,7 @@ private fun ParoCardiacoAppBarPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun BusquedaAppBarPreview() {
+private fun GenericAppBarSearchPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(
@@ -104,7 +104,7 @@ private fun BusquedaAppBarPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun PacienteEstableAppBarPreview() {
+private fun GenericAppBarSimplePreview() {
     AppBarPreviewContainer {
         UanAppBar(
             title = "Titulo",
@@ -115,7 +115,7 @@ private fun PacienteEstableAppBarPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun RiesgoQuimicoAppBarPreview() {
+private fun GenericAppBarActionsPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(

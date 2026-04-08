@@ -21,7 +21,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ToolbarNoneSelectedPreview() {
+private fun GenericToolbarDefaultPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -60,7 +60,7 @@ private fun ToolbarNoneSelectedPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ToolbarEndSelectedPreview() {
+private fun GenericToolbarEndSelectedPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -99,7 +99,7 @@ private fun ToolbarEndSelectedPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ToolbarStartSelectedPreview() {
+private fun GenericToolbarStartSelectedPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -138,7 +138,7 @@ private fun ToolbarStartSelectedPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ToolbarDisabledPreview() {
+private fun GenericToolbarDisabledPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -178,7 +178,7 @@ private fun ToolbarDisabledPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun ToolbarAllStatesPreview() {
+private fun GenericToolbarAllStatesPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(

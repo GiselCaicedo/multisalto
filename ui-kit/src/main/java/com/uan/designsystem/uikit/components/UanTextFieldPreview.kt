@@ -24,7 +24,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TextFieldIdlePreview() {
+private fun GenericTextFieldIdlePreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -53,7 +53,7 @@ private fun TextFieldIdlePreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TextFieldFocusedPreview() {
+private fun GenericTextFieldFocusedPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -83,7 +83,7 @@ private fun TextFieldFocusedPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TextFieldErrorPreview() {
+private fun GenericTextFieldErrorPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -129,7 +129,7 @@ private fun TextFieldErrorPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TextFieldDisabledPreview() {
+private fun GenericTextFieldDisabledPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
@@ -160,7 +160,7 @@ private fun TextFieldDisabledPreview() {
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
-private fun TextFieldWithIconsPreview() {
+private fun GenericTextFieldIconsPreview() {
     UanTheme {
         val tokens = UanThemeTokens.current
         Column(
