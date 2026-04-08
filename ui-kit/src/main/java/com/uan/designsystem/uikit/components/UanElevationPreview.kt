@@ -18,9 +18,9 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 private fun ElevacionParoCardiacoPreview() {
     ElevationPreviewContainer {
         UanElevation(
-            text = "DEA",
+            text = "Nivel 1",
             level = UanElevationLevel.Level3,
-            contentDescription = "Superficie elevada para DEA",
+            contentDescription = "Superficie elevada de ejemplo",
         )
     }
 }
@@ -30,9 +30,9 @@ private fun ElevacionParoCardiacoPreview() {
 private fun ElevacionEvacuacionPreview() {
     ElevationPreviewContainer {
         UanElevation(
-            text = "RUTA",
+            text = "Nivel 2",
             level = UanElevationLevel.Level1,
-            contentDescription = "Superficie elevada de ruta",
+            contentDescription = "Superficie elevada de ejemplo",
         )
     }
 }
@@ -42,9 +42,9 @@ private fun ElevacionEvacuacionPreview() {
 private fun ElevacionBusquedaPreview() {
     ElevationPreviewContainer {
         UanElevation(
-            text = "RADAR",
+            text = "Nivel 3",
             level = UanElevationLevel.Level4,
-            contentDescription = "Superficie elevada de radar",
+            contentDescription = "Superficie elevada de ejemplo",
         )
     }
 }
@@ -54,12 +54,12 @@ private fun ElevacionBusquedaPreview() {
 private fun ElevacionPacientePreview() {
     ElevationPreviewContainer {
         UanElevation(
-            text = "ESTABLE",
+            text = "Nivel 4",
             level = UanElevationLevel.Level2,
-            contentDescription = "Superficie elevada de estado del paciente",
+            contentDescription = "Superficie elevada de ejemplo",
             content = {
                 Text(
-                    text = "ESTABLE",
+                    text = "Nivel 4",
                     style = UanElevationDefaults.labelStyle,
                     color = UanThemeTokens.current.colors.success,
                 )
@@ -73,10 +73,10 @@ private fun ElevacionPacientePreview() {
 private fun ElevacionDisabledPreview() {
     ElevationPreviewContainer {
         UanElevation(
-            text = "SIN RED",
+            text = "Deshabilitado",
             enabled = false,
             level = UanElevationLevel.Level3,
-            contentDescription = "Superficie inhabilitada",
+            contentDescription = "Superficie inhabilitada de ejemplo",
         )
     }
 }

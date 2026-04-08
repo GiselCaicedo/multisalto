@@ -24,9 +24,9 @@ private fun EvacuacionDropdownPreview() {
     DropdownMenuPreviewContainer {
         val items = remember {
             listOf(
-                UanDropdownMenuItem("Ruta norte", "Abrir ruta norte", onClick = {}),
-                UanDropdownMenuItem("Ruta oeste", "Abrir ruta oeste", onClick = {}),
-                UanDropdownMenuItem("Punto seguro", "Abrir punto seguro", onClick = {}),
+                UanDropdownMenuItem("Opcion 1", "Abrir opcion 1", onClick = {}),
+                UanDropdownMenuItem("Opcion 2", "Abrir opcion 2", onClick = {}),
+                UanDropdownMenuItem("Opcion 3", "Abrir opcion 3", onClick = {}),
             )
         }
         UanDropdownMenu(expanded = true, items = items, tone = UanTone.Info)
@@ -41,19 +41,19 @@ private fun TriageDropdownPreview() {
         val items = remember {
             listOf(
                 UanDropdownMenuItem(
-                    "Rojo",
-                    "Paciente rojo",
+                    "Opcion A",
+                    "Detalle de opcion A",
                     onClick = {},
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Default.WarningAmber,
-                            contentDescription = "Paciente rojo",
+                            contentDescription = "Icono decorativo",
                             tint = tokens.colors.critical,
                         )
                     },
                 ),
-                UanDropdownMenuItem("Amarillo", "Paciente amarillo", onClick = {}),
-                UanDropdownMenuItem("Verde", "Paciente verde", onClick = {}),
+                UanDropdownMenuItem("Opcion B", "Detalle de opcion B", onClick = {}),
+                UanDropdownMenuItem("Opcion C", "Detalle de opcion C", onClick = {}),
             )
         }
         UanDropdownMenu(expanded = true, items = items, tone = UanTone.Warning)
@@ -68,8 +68,8 @@ private fun PacienteDropdownPreview() {
         val items = remember {
             listOf(
                 UanDropdownMenuItem(
-                    "Estable",
-                    "Estado estable",
+                    "Opcion 1",
+                    "Descripcion de opcion 1",
                     onClick = {},
                     trailingContent = {
                         Icon(
@@ -79,7 +79,7 @@ private fun PacienteDropdownPreview() {
                         )
                     },
                 ),
-                UanDropdownMenuItem("Traslado", "Estado traslado", onClick = {}),
+                UanDropdownMenuItem("Opcion 2", "Descripcion de opcion 2", onClick = {}),
             )
         }
         UanDropdownMenu(expanded = true, items = items, tone = UanTone.Success)
@@ -94,8 +94,8 @@ private fun RiesgoDropdownPreview() {
         val items = remember {
             listOf(
                 UanDropdownMenuItem(
-                    "Aislar zona",
-                    "Aislar zona critica",
+                    "Opcion 1",
+                    "Descripcion de opcion 1",
                     onClick = {},
                     trailingContent = {
                         Icon(
@@ -105,7 +105,7 @@ private fun RiesgoDropdownPreview() {
                         )
                     },
                 ),
-                UanDropdownMenuItem("Llamar apoyo", "Llamar apoyo", onClick = {}),
+                UanDropdownMenuItem("Opcion 2", "Descripcion de opcion 2", onClick = {}),
             )
         }
         UanDropdownMenu(expanded = true, items = items, tone = UanTone.Critical)
@@ -118,8 +118,8 @@ private fun DisabledDropdownPreview() {
     DropdownMenuPreviewContainer {
         val items = remember {
             listOf(
-                UanDropdownMenuItem("Sin red", "Sin red", enabled = false, onClick = {}),
-                UanDropdownMenuItem("Sincronizar", "Sincronizar", enabled = false, onClick = {}),
+                UanDropdownMenuItem("Opcion 1", "Descripcion de opcion 1", enabled = false, onClick = {}),
+                UanDropdownMenuItem("Opcion 2", "Descripcion de opcion 2", enabled = false, onClick = {}),
             )
         }
         UanDropdownMenu(expanded = true, items = items, enabled = false)

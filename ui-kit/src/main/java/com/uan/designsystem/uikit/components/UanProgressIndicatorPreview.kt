@@ -17,17 +17,17 @@ private val ParoCardiacoStatusSteps = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
-        contentDescription = "Activacion del codigo azul completada",
+        contentDescription = "Paso 1 completado",
     ),
     UanProgressStep(
         label = "2",
         state = UanProgressStepState.Completed,
-        contentDescription = "DEA ubicado y listo",
+        contentDescription = "Paso 2 completado",
     ),
     UanProgressStep(
         label = "3",
         state = UanProgressStepState.Critical,
-        contentDescription = "Descarga inmediata requerida",
+        contentDescription = "Paso 3 critico",
     ),
 )
 
@@ -35,17 +35,17 @@ private val EvacuacionWarningSteps = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
-        contentDescription = "Ruta despejada",
+        contentDescription = "Paso 1 completado",
     ),
     UanProgressStep(
         label = "2",
         state = UanProgressStepState.Warning,
-        contentDescription = "Punto de reunion saturado",
+        contentDescription = "Paso 2 con advertencia",
     ),
     UanProgressStep(
         label = "3",
         state = UanProgressStepState.Pending,
-        contentDescription = "Traslado pendiente",
+        contentDescription = "Paso 3 pendiente",
     ),
 )
 
@@ -53,22 +53,22 @@ private val PacienteEstabilizadoSteps = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
-        contentDescription = "Valoracion primaria completada",
+        contentDescription = "Paso 1 completado",
     ),
     UanProgressStep(
         label = "2",
         state = UanProgressStepState.Completed,
-        contentDescription = "Oxigenacion estable",
+        contentDescription = "Paso 2 completado",
     ),
     UanProgressStep(
         label = "3",
         state = UanProgressStepState.Current,
-        contentDescription = "Monitoreo activo del paciente",
+        contentDescription = "Paso 3 actual",
     ),
     UanProgressStep(
         label = "4",
         state = UanProgressStepState.Pending,
-        contentDescription = "Entrega al equipo medico pendiente",
+        contentDescription = "Paso 4 pendiente",
     ),
 )
 
@@ -76,17 +76,17 @@ private val TrasladoLoadingSteps = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
-        contentDescription = "Triager realizado",
+        contentDescription = "Paso 1 completado",
     ),
     UanProgressStep(
         label = "2",
         state = UanProgressStepState.Loading,
-        contentDescription = "Ambulancia en aproximacion",
+        contentDescription = "Paso 2 en carga",
     ),
     UanProgressStep(
         label = "3",
         state = UanProgressStepState.Pending,
-        contentDescription = "Ingreso a urgencias pendiente",
+        contentDescription = "Paso 3 pendiente",
     ),
 )
 
@@ -94,17 +94,17 @@ private val ZonaRestringidaDisabledSteps = listOf(
     UanProgressStep(
         label = "1",
         state = UanProgressStepState.Completed,
-        contentDescription = "Perimetro inicial asegurado",
+        contentDescription = "Paso 1 completado",
     ),
     UanProgressStep(
         label = "2",
         state = UanProgressStepState.Disabled,
-        contentDescription = "Ingreso bloqueado por riesgo electrico",
+        contentDescription = "Paso 2 deshabilitado",
     ),
     UanProgressStep(
         label = "3",
         state = UanProgressStepState.Disabled,
-        contentDescription = "Rescate suspendido temporalmente",
+        contentDescription = "Paso 3 deshabilitado",
     ),
 )
 

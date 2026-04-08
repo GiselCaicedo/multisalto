@@ -25,8 +25,8 @@ private fun RutaVerificadaUncheckedPreview() {
             state = UanCheckboxState.Unchecked,
             onStateChange = {},
             tone = UanTone.Neutral,
-            checkedContentDescription = "Ruta verificada",
-            uncheckedContentDescription = "Ruta pendiente de verificar",
+            checkedContentDescription = "Opcion verificada",
+            uncheckedContentDescription = "Opcion pendiente",
         )
     }
 }
@@ -39,8 +39,8 @@ private fun BotiquinInspeccionUncheckedPreview() {
             state = UanCheckboxState.Unchecked,
             onStateChange = {},
             tone = UanTone.Info,
-            checkedContentDescription = "Botiquin inspeccionado",
-            uncheckedContentDescription = "Botiquin sin inspeccionar",
+            checkedContentDescription = "Opcion verificada",
+            uncheckedContentDescription = "Opcion pendiente",
         )
     }
 }
@@ -54,12 +54,12 @@ private fun EvacuacionConfirmadaCheckedPreview() {
             state = UanCheckboxState.Checked,
             onStateChange = {},
             tone = UanTone.Info,
-            checkedContentDescription = "Evacuacion confirmada",
-            uncheckedContentDescription = "Evacuacion no confirmada",
+            checkedContentDescription = "Opcion seleccionada",
+            uncheckedContentDescription = "Opcion sin seleccionar",
             checkedContent = {
                 Icon(
                     imageVector = Icons.Default.Check,
-                    contentDescription = "Evacuacion confirmada",
+                    contentDescription = "Icono de seleccion",
                     tint = tokens.colors.onInfo,
                 )
             },
@@ -76,13 +76,13 @@ private fun TriageParcialIndeterminatePreview() {
             state = UanCheckboxState.Indeterminate,
             onStateChange = {},
             tone = UanTone.Warning,
-            checkedContentDescription = "Triage completo",
-            uncheckedContentDescription = "Triage pendiente",
-            indeterminateContentDescription = "Triage parcial",
+            checkedContentDescription = "Opcion seleccionada",
+            uncheckedContentDescription = "Opcion sin seleccionar",
+            indeterminateContentDescription = "Estado intermedio",
             indeterminateContent = {
                 Icon(
                     imageVector = Icons.Default.Remove,
-                    contentDescription = "Triage parcial",
+                    contentDescription = "Icono de estado intermedio",
                     tint = tokens.colors.onWarning,
                 )
             },
@@ -100,12 +100,12 @@ private fun PeligroElectricoCriticoPreview() {
             onStateChange = {},
             enabled = false,
             tone = UanTone.Critical,
-            checkedContentDescription = "Peligro electrico confirmado",
-            uncheckedContentDescription = "Peligro electrico no confirmado",
+            checkedContentDescription = "Opcion seleccionada",
+            uncheckedContentDescription = "Opcion sin seleccionar",
             checkedContent = {
                 Icon(
                     imageVector = Icons.Default.PriorityHigh,
-                    contentDescription = "Peligro electrico",
+                    contentDescription = "Icono de seleccion",
                     tint = tokens.colors.onCritical,
                 )
             },

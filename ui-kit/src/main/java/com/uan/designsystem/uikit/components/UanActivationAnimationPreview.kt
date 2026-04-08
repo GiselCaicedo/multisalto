@@ -20,7 +20,7 @@ private fun ActivacionDEAPreview() {
         UanActivationAnimation(
             active = true,
             tone = UanTone.Info,
-            contentDescription = "Activacion de DEA",
+            contentDescription = "Animacion de ejemplo",
         )
     }
 }
@@ -32,7 +32,7 @@ private fun ActivacionEvacuacionPreview() {
         UanActivationAnimation(
             active = true,
             tone = UanTone.Warning,
-            contentDescription = "Activacion de evacuacion",
+            contentDescription = "Animacion de ejemplo",
         )
     }
 }
@@ -44,7 +44,7 @@ private fun ActivacionBusquedaPreview() {
         UanActivationAnimation(
             active = true,
             tone = UanTone.Success,
-            contentDescription = "Activacion de busqueda",
+            contentDescription = "Animacion de ejemplo",
             nodeCount = 10,
         )
     }
@@ -57,7 +57,7 @@ private fun ActivacionCriticaPreview() {
         UanActivationAnimation(
             active = true,
             tone = UanTone.Critical,
-            contentDescription = "Activacion critica",
+            contentDescription = "Animacion de ejemplo",
             centerContent = {
                 Text(
                     text = "!",

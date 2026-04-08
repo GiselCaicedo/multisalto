@@ -23,8 +23,8 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 private fun PacienteCardPreview() {
     CardPreviewContainer {
         UanCard(
-            title = "Paciente estabilizado",
-            body = "Pulso regular y saturacion estable. Preparar traslado inmediato.",
+            title = "Tarjeta informativa",
+            body = "Texto de ejemplo para revisar la composicion, el espaciado y la jerarquia.",
             tone = UanTone.Success,
         )
     }
@@ -35,8 +35,8 @@ private fun PacienteCardPreview() {
 private fun RutaEvacuacionCardPreview() {
     CardPreviewContainer {
         UanCard(
-            title = "Ruta de evacuacion",
-            body = "El corredor este permanece libre. Evite la salida sur.",
+            title = "Tarjeta con etiqueta",
+            body = "Ejemplo de contenido secundario con un estado visible y un footer opcional.",
             tone = UanTone.Info,
             footer = {
                 UanBadge(
@@ -55,13 +55,13 @@ private fun RiesgoElectricoCardPreview() {
     CardPreviewContainer {
         val tokens = UanThemeTokens.current
         UanCard(
-            title = "Peligro electrico",
-            body = "No avanzar hasta desconectar el suministro del tablero principal.",
+            title = "Tarjeta de alerta",
+            body = "Ejemplo de una tarjeta destacada con contenido preventivo.",
             tone = UanTone.Critical,
             supportingContent = {
                 Icon(
                     imageVector = Icons.Default.WarningAmber,
-                    contentDescription = "Peligro electrico",
+                    contentDescription = "Icono de alerta",
                     tint = tokens.colors.critical,
                 )
             },
@@ -75,13 +75,13 @@ private fun ChecklistOperativoCardPreview() {
     CardPreviewContainer {
         val tokens = UanThemeTokens.current
         UanCard(
-            title = "Checklist operativo",
-            body = "Verifique radio, linterna, guantes y botiquin antes de salir.",
+            title = "Tarjeta de checklist",
+            body = "Ejemplo de tarjeta con icono de confirmacion y cuerpo de texto.",
             tone = UanTone.Neutral,
             supportingContent = {
                 Icon(
                     imageVector = Icons.Default.CheckCircle,
-                    contentDescription = "Checklist completado",
+                    contentDescription = "Icono de confirmacion",
                     tint = tokens.colors.success,
                 )
             },
@@ -94,8 +94,8 @@ private fun ChecklistOperativoCardPreview() {
 private fun SensorInactivoCardPreview() {
     CardPreviewContainer {
         UanCard(
-            title = "Sensor desconectado",
-            body = "No hay lectura del modulo secundario. Revise el cableado.",
+            title = "Tarjeta deshabilitada",
+            body = "Estado inactivo para validar contraste, opacidad y legibilidad.",
             enabled = false,
             tone = UanTone.Warning,
         )

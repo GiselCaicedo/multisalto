@@ -23,20 +23,20 @@ private fun EvacuacionListPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
-            title = "Ruta norte",
-            supportingText = "Salida recomendada por brigada",
+            title = "Elemento 1",
+            supportingText = "Texto secundario de ejemplo",
             onClick = {},
             leadingContent = {
                 Icon(
                     imageVector = Icons.Default.Notifications,
-                    contentDescription = "Ruta norte",
+                    contentDescription = "Icono de elemento",
                     tint = tokens.colors.info,
                 )
             },
             trailingContent = {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = "Abrir ruta",
+                    contentDescription = "Abrir detalle",
                     tint = tokens.colors.onSurface,
                 )
             },
@@ -50,12 +50,12 @@ private fun PacienteListPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
-            title = "Paciente 04",
-            supportingText = "Saturacion 97%, traslado pendiente",
+            title = "Elemento 2",
+            supportingText = "Texto secundario de ejemplo",
             leadingContent = {
                 Icon(
                     imageVector = Icons.Default.CheckCircle,
-                    contentDescription = "Paciente estable",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.success,
                 )
             },
@@ -69,13 +69,13 @@ private fun RiesgoListPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
-            title = "Gas inflamable",
-            supportingText = "Zona restringida en radio de 30 metros",
+            title = "Elemento 3",
+            supportingText = "Texto secundario de ejemplo",
             onClick = {},
             leadingContent = {
                 Icon(
                     imageVector = Icons.Default.WarningAmber,
-                    contentDescription = "Gas inflamable",
+                    contentDescription = "Icono de alerta",
                     tint = tokens.colors.critical,
                 )
             },
@@ -96,12 +96,12 @@ private fun RadioListPreview() {
     ListsPreviewContainer {
         val tokens = UanThemeTokens.current
         UanLists(
-            title = "Canal operativo",
-            supportingText = "Frecuencia secundaria activa",
+            title = "Elemento 4",
+            supportingText = "Texto secundario de ejemplo",
             leadingContent = {
                 Icon(
                     imageVector = Icons.Default.Notifications,
-                    contentDescription = "Canal operativo",
+                    contentDescription = "Icono de elemento",
                     tint = tokens.colors.warning,
                 )
             },
@@ -114,8 +114,8 @@ private fun RadioListPreview() {
 private fun DisabledListPreview() {
     ListsPreviewContainer {
         UanLists(
-            title = "Sincronizacion",
-            supportingText = "Servidor no disponible",
+            title = "Elemento 5",
+            supportingText = "Texto secundario de ejemplo",
             enabled = false,
         )
     }

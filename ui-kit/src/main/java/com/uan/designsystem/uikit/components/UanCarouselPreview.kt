@@ -27,17 +27,17 @@ private data class CarouselPreviewCard(
     val title: String,
 )
 
-private val ForestRouteCards = listOf(
-    CarouselPreviewCard("Ruta boscosa"),
-    CarouselPreviewCard("Zona de reunion"),
-    CarouselPreviewCard("Acceso vehicular"),
+private val SampleCarouselCards = listOf(
+    CarouselPreviewCard("Elemento 1"),
+    CarouselPreviewCard("Elemento 2"),
+    CarouselPreviewCard("Elemento 3"),
 )
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
 @Composable
 private fun EvacuacionBosqueCarouselPreview() {
     CarouselPreviewContainer {
-        val items = remember { ForestRouteCards }
+        val items = remember { SampleCarouselCards }
         val pagerState = rememberPagerState(initialPage = 0) { items.size }
         UanCarousel(
             items = items,
@@ -46,25 +46,25 @@ private fun EvacuacionBosqueCarouselPreview() {
             itemContentDescription = { index, item -> "${item.title}, tarjeta ${index + 1}" },
             bottomActions = listOf(
                 UanCarouselAction(
-                    label = "LABEL",
-                    contentDescription = "Ver detalle de la ruta",
+                    label = "ACCION",
+                    contentDescription = "Ver detalle",
                     onClick = {},
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Default.WbSunny,
-                            contentDescription = "Icono de ruta",
+                            contentDescription = "Icono decorativo",
                             tint = UanThemeTokens.current.colors.onSurface,
                         )
                     },
                 ),
                 UanCarouselAction(
-                    label = "LABEL",
-                    contentDescription = "Abrir vista ampliada",
+                    label = "ACCION",
+                    contentDescription = "Abrir vista",
                     onClick = {},
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Default.WbSunny,
-                            contentDescription = "Icono de vista",
+                            contentDescription = "Icono decorativo",
                             tint = UanThemeTokens.current.colors.onSurface,
                         )
                     },
@@ -80,7 +80,7 @@ private fun EvacuacionBosqueCarouselPreview() {
 @Composable
 private fun BusquedaSecuencialCarouselPreview() {
     CarouselPreviewContainer {
-        val items = remember { ForestRouteCards }
+        val items = remember { SampleCarouselCards }
         val pagerState = rememberPagerState(initialPage = 1) { items.size }
         UanCarousel(
             items = items,
@@ -97,7 +97,7 @@ private fun BusquedaSecuencialCarouselPreview() {
 @Composable
 private fun PuntoSeguroConfirmadoCarouselPreview() {
     CarouselPreviewContainer {
-        val items = remember { ForestRouteCards }
+        val items = remember { SampleCarouselCards }
         val pagerState = rememberPagerState(initialPage = 2) { items.size }
         UanCarousel(
             items = items,
@@ -106,13 +106,13 @@ private fun PuntoSeguroConfirmadoCarouselPreview() {
             itemContentDescription = { index, item -> "${item.title}, confirmada ${index + 1}" },
             bottomActions = listOf(
                 UanCarouselAction(
-                    label = "LABEL",
-                    contentDescription = "Confirmar punto seguro",
+                    label = "ACCION",
+                    contentDescription = "Confirmar",
                     onClick = {},
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Default.WbSunny,
-                            contentDescription = "Confirmacion",
+                            contentDescription = "Icono decorativo",
                             tint = UanThemeTokens.current.colors.onSurface,
                         )
                     },
@@ -128,7 +128,7 @@ private fun PuntoSeguroConfirmadoCarouselPreview() {
 @Composable
 private fun RiesgoDeIncendioCarouselPreview() {
     CarouselPreviewContainer {
-        val items = remember { ForestRouteCards }
+        val items = remember { SampleCarouselCards }
         val pagerState = rememberPagerState(initialPage = 0) { items.size }
         UanCarousel(
             items = items,
@@ -137,13 +137,13 @@ private fun RiesgoDeIncendioCarouselPreview() {
             itemContentDescription = { index, item -> "${item.title}, alerta ${index + 1}" },
             bottomActions = listOf(
                 UanCarouselAction(
-                    label = "LABEL",
-                    contentDescription = "Mostrar alerta de incendio",
+                    label = "ACCION",
+                    contentDescription = "Mostrar alerta",
                     onClick = {},
                     leadingContent = {
                         Icon(
                             imageVector = Icons.Default.WbSunny,
-                            contentDescription = "Alerta visual",
+                            contentDescription = "Icono decorativo",
                             tint = UanThemeTokens.current.colors.onSurface,
                         )
                     },
@@ -159,7 +159,7 @@ private fun RiesgoDeIncendioCarouselPreview() {
 @Composable
 private fun GaleriaFueraDeServicioCarouselPreview() {
     CarouselPreviewContainer {
-        val items = remember { ForestRouteCards }
+        val items = remember { SampleCarouselCards }
         val pagerState = rememberPagerState(initialPage = 0) { items.size }
         UanCarousel(
             items = items,
@@ -169,7 +169,7 @@ private fun GaleriaFueraDeServicioCarouselPreview() {
             itemContentDescription = { index, item -> "${item.title}, no disponible ${index + 1}" },
             bottomActions = listOf(
                 UanCarouselAction(
-                    label = "LABEL",
+                    label = "ACCION",
                     contentDescription = "Accion deshabilitada",
                     onClick = {},
                     leadingContent = {

@@ -35,7 +35,7 @@ private fun BusquedaNocturnaInactivaPreview() {
             distanceRanges = ranges,
             state = UanRadarState.Inactive,
             tone = UanTone.Neutral,
-            targetContentDescription = "Senal sin confirmacion",
+            targetContentDescription = "Objetivo no confirmado",
         )
     }
 }
@@ -50,7 +50,7 @@ private fun SenderistaUbicadoActivoPreview() {
             distanceRanges = ranges,
             state = UanRadarState.Active,
             tone = UanTone.Info,
-            targetContentDescription = "Senderista ubicado",
+            targetContentDescription = "Objetivo ubicado",
         )
     }
 }
@@ -66,7 +66,7 @@ private fun AproximacionConEscalasPreview() {
             state = UanRadarState.Active,
             tone = UanTone.Info,
             showScaleLabels = true,
-            targetContentDescription = "Victima a corta distancia",
+            targetContentDescription = "Objetivo a corta distancia",
         )
     }
 }
@@ -81,12 +81,12 @@ private fun RiesgoInmediatoCriticoPreview() {
             distanceRanges = ranges,
             state = UanRadarState.Critical,
             tone = UanTone.Critical,
-            targetContentDescription = "Gas toxico a proximidad critica",
+            targetContentDescription = "Objetivo a proximidad critica",
             targetContent = {
                 val tokens = UanThemeTokens.current
                 Icon(
                     imageVector = Icons.Default.PriorityHigh,
-                    contentDescription = "Amenaza critica",
+                    contentDescription = "Icono de amenaza",
                     tint = tokens.colors.onCritical,
                     modifier = Modifier.size(UanRadarDefaults.targetIconSize),
                 )
@@ -107,7 +107,7 @@ private fun ZonaBloqueadaDeshabilitadaPreview() {
             state = UanRadarState.Disabled,
             tone = UanTone.Warning,
             showScaleLabels = true,
-            targetContentDescription = "Sensor fuera de servicio",
+            targetContentDescription = "Objetivo fuera de servicio",
         )
     }
 }

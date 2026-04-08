@@ -36,12 +36,12 @@ private fun TextFieldIdlePreview() {
             UanTextField(
                 value = "",
                 onValueChange = {},
-                label = "Nombre",
+                label = "Campo",
             )
             UanTextField(
                 value = "",
                 onValueChange = {},
-                label = "Apellido",
+                label = "Campo",
             )
         }
     }
@@ -63,15 +63,15 @@ private fun TextFieldFocusedPreview() {
             verticalArrangement = Arrangement.spacedBy(tokens.spacing.md),
         ) {
             UanTextField(
-                value = "David Leal",
+                value = "Texto",
                 onValueChange = {},
-                label = "Nombre",
+                label = "Campo",
             )
             UanTextField(
                 value = "",
                 onValueChange = {},
-                label = "Nombre",
-                placeholder = "Escribe tu nombre",
+                label = "Campo",
+                placeholder = "Escribe un valor",
             )
         }
     }
@@ -95,12 +95,12 @@ private fun TextFieldErrorPreview() {
             UanTextField(
                 value = "",
                 onValueChange = {},
-                label = "Nombre",
+                label = "Campo",
                 isError = true,
-                errorMessage = "Por favor completa la casilla",
+                errorMessage = "Campo requerido",
                 trailingIcon = {
                     UanIconButton(
-                        contentDescription = "Limpiar error",
+                        contentDescription = "Limpiar campo",
                         onClick = {},
                     ) {
                         Icon(
@@ -115,9 +115,9 @@ private fun TextFieldErrorPreview() {
             UanTextField(
                 value = "",
                 onValueChange = {},
-                label = "Nombre",
+                label = "Campo",
                 isError = true,
-                errorMessage = "No Completado",
+                errorMessage = "Campo no completado",
             )
         }
     }
@@ -141,13 +141,13 @@ private fun TextFieldDisabledPreview() {
             UanTextField(
                 value = "",
                 onValueChange = {},
-                label = "Nombre",
+                label = "Campo",
                 enabled = false,
             )
             UanTextField(
-                value = "David Leal",
+                value = "Texto",
                 onValueChange = {},
-                label = "Nombre",
+                label = "Campo",
                 enabled = false,
             )
         }
@@ -172,7 +172,7 @@ private fun TextFieldWithIconsPreview() {
             UanTextField(
                 value = "",
                 onValueChange = {},
-                label = "Buscar paciente",
+                label = "Buscar",
                 leadingIcon = {
                     Icon(
                         imageVector = Icons.Default.Search,
@@ -183,12 +183,12 @@ private fun TextFieldWithIconsPreview() {
                 },
             )
             UanTextField(
-                value = "clave123",
+                value = "texto123",
                 onValueChange = {},
-                label = "Contrasena",
+                label = "Campo",
                 trailingIcon = {
                     UanIconButton(
-                        contentDescription = "Mostrar contrasena",
+                        contentDescription = "Mostrar valor",
                         onClick = {},
                     ) {
                         Icon(

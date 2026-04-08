@@ -24,16 +24,16 @@ private fun EvacuacionAppBarPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(
-            title = "Evacuacion",
-            subtitle = "Salida norte disponible",
+            title = "Titulo",
+            subtitle = "Subtitulo",
             navigationIcon = {
                 UanIconButton(
-                    contentDescription = "Volver",
+                    contentDescription = "Icono de volver",
                     borderColor = tokens.colors.outline,
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = "Volver",
+                        contentDescription = "Icono de volver",
                         tint = tokens.colors.onSurface,
                     )
                 }
@@ -48,16 +48,16 @@ private fun ParoCardiacoAppBarPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(
-            title = "Codigo azul",
-            subtitle = "DEA conectado",
+            title = "Titulo",
+            subtitle = "Subtitulo",
             actions = {
                 UanIconButton(
-                    contentDescription = "Cerrar emergencia",
+                    contentDescription = "Icono de cerrar",
                     borderColor = tokens.colors.outline,
                 ) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = "Cerrar emergencia",
+                        contentDescription = "Icono de cerrar",
                         tint = tokens.colors.onSurface,
                     )
                 }
@@ -72,28 +72,28 @@ private fun BusquedaAppBarPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(
-            title = "Busqueda",
-            subtitle = "Sector bosque",
+            title = "Titulo",
+            subtitle = "Subtitulo",
             navigationIcon = {
                 UanIconButton(
-                    contentDescription = "Volver",
+                    contentDescription = "Icono de volver",
                     borderColor = tokens.colors.outline,
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = "Volver",
+                        contentDescription = "Icono de volver",
                         tint = tokens.colors.onSurface,
                     )
                 }
             },
             actions = {
                 UanIconButton(
-                    contentDescription = "Notificaciones",
+                    contentDescription = "Icono de notificaciones",
                     borderColor = tokens.colors.outline,
                 ) {
                     Icon(
                         imageVector = Icons.Default.Notifications,
-                        contentDescription = "Notificaciones",
+                        contentDescription = "Icono de notificaciones",
                         tint = tokens.colors.onSurface,
                     )
                 }
@@ -107,8 +107,8 @@ private fun BusquedaAppBarPreview() {
 private fun PacienteEstableAppBarPreview() {
     AppBarPreviewContainer {
         UanAppBar(
-            title = "Paciente estable",
-            subtitle = "Traslado en curso",
+            title = "Titulo",
+            subtitle = "Subtitulo",
         )
     }
 }
@@ -119,26 +119,26 @@ private fun RiesgoQuimicoAppBarPreview() {
     AppBarPreviewContainer {
         val tokens = UanThemeTokens.current
         UanAppBar(
-            title = "Riesgo quimico",
-            subtitle = "Perimetro restringido",
+            title = "Titulo",
+            subtitle = "Subtitulo",
             actions = {
                 UanIconButton(
-                    contentDescription = "Notificaciones",
+                    contentDescription = "Icono de notificaciones",
                     borderColor = tokens.colors.outline,
                 ) {
                     Icon(
                         imageVector = Icons.Default.Notifications,
-                        contentDescription = "Notificaciones",
+                        contentDescription = "Icono de notificaciones",
                         tint = tokens.colors.onSurface,
                     )
                 }
                 UanIconButton(
-                    contentDescription = "Cerrar alerta",
+                    contentDescription = "Icono de cerrar",
                     borderColor = tokens.colors.outline,
                 ) {
                     Icon(
                         imageVector = Icons.Default.Close,
-                        contentDescription = "Cerrar alerta",
+                        contentDescription = "Icono de cerrar",
                         tint = tokens.colors.onSurface,
                     )
                 }

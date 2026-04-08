@@ -29,11 +29,11 @@ private fun EvacuacionExpandidaPreview() {
             onExpandedChange = {},
             tone = UanTone.Info,
             collapsedContent = {
-                UanSheetBody("Detalles de evacuacion disponibles")
+                UanSheetBody("Texto de ejemplo para el encabezado de la hoja.")
             },
         ) {
-            UanSheetTitle("Ruta de evacuacion")
-            UanSheetBody("Salida norte despejada. Tiempo estimado al punto seguro: 3 minutos.")
+            UanSheetTitle("Titulo de hoja")
+            UanSheetBody("Texto de ejemplo para validar el contenido de la hoja.")
             PreviewPanel(height = 132.dp)
         }
     }
@@ -51,8 +51,8 @@ private fun TriageColapsadoPreview() {
                 PreviewPanel(height = 20.dp)
             },
         ) {
-            UanSheetTitle("Clasificacion de pacientes")
-            UanSheetBody("Panel con prioridades clinicas del incidente.")
+            UanSheetTitle("Titulo de hoja")
+            UanSheetBody("Texto de ejemplo para validar el contenido de la hoja.")
         }
     }
 }
@@ -66,14 +66,14 @@ private fun RiesgoQuimicoAdvertenciaPreview() {
             onExpandedChange = {},
             tone = UanTone.Warning,
             collapsedContent = {
-                UanSheetBody("Concentracion elevada detectada")
+                UanSheetBody("Texto de ejemplo para la seccion superior.")
             },
         ) {
-            UanSheetTitle("Riesgo quimico")
-            UanSheetBody("Mantenga distancia operativa y confirme uso de mascara con filtro.")
+            UanSheetTitle("Titulo de hoja")
+            UanSheetBody("Texto de ejemplo para validar el contenido de la hoja.")
             Icon(
                 imageVector = Icons.Default.WarningAmber,
-                contentDescription = "Advertencia quimica",
+                contentDescription = "Icono de ejemplo",
                 tint = UanThemeTokens.current.colors.warning,
                 modifier = Modifier.size(32.dp),
             )
@@ -90,11 +90,11 @@ private fun PacienteEstabilizadoInfoPreview() {
             onExpandedChange = {},
             tone = UanTone.Success,
             collapsedContent = {
-                UanSheetBody("Signos vitales estables")
+                UanSheetBody("Texto de ejemplo para la seccion superior.")
             },
         ) {
-            UanSheetTitle("Paciente estabilizado")
-            UanSheetBody("Saturacion 97%, pulso 82 lpm. Preparar entrega a ambulancia.")
+            UanSheetTitle("Titulo de hoja")
+            UanSheetBody("Texto de ejemplo para validar el contenido de la hoja.")
             PreviewPanel(height = 96.dp)
         }
     }
@@ -113,8 +113,8 @@ private fun SensorFueraDeServicioPreview() {
                 PreviewPanel(height = 16.dp)
             },
         ) {
-            UanSheetTitle("Sensor fuera de servicio")
-            UanSheetBody("Reconecte la unidad antes de continuar el monitoreo.")
+            UanSheetTitle("Titulo de hoja")
+            UanSheetBody("Texto de ejemplo para validar el contenido de la hoja.")
         }
     }
 }

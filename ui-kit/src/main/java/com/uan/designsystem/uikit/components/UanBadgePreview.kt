@@ -21,7 +21,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 private fun RutaSeguraBadgePreview() {
     BadgePreviewContainer {
         UanBadge(
-            text = "RUTA SEGURA",
+            text = "ETIQUETA",
             tone = UanTone.Success,
             emphasis = UanBadgeEmphasis.Solid,
         )
@@ -34,13 +34,13 @@ private fun PacienteMonitorizadoBadgePreview() {
     BadgePreviewContainer {
         val tokens = UanThemeTokens.current
         UanBadge(
-            text = "MONITOREO",
+            text = "ESTADO",
             tone = UanTone.Info,
             emphasis = UanBadgeEmphasis.Tonal,
             leadingContent = {
                 Icon(
                     imageVector = Icons.Default.CheckCircle,
-                    contentDescription = "Monitoreo activo",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.info,
                 )
             },
@@ -66,13 +66,13 @@ private fun RiesgoQuimicoBadgePreview() {
     BadgePreviewContainer {
         val tokens = UanThemeTokens.current
         UanBadge(
-            text = "RIESGO QUIMICO",
+            text = "ALERTA",
             tone = UanTone.Critical,
             emphasis = UanBadgeEmphasis.Solid,
             leadingContent = {
                 Icon(
                     imageVector = Icons.Default.WarningAmber,
-                    contentDescription = "Riesgo quimico",
+                    contentDescription = "Icono de alerta",
                     tint = tokens.colors.onCritical,
                 )
             },
@@ -85,7 +85,7 @@ private fun RiesgoQuimicoBadgePreview() {
 private fun ConexionCaidaBadgePreview() {
     BadgePreviewContainer {
         UanBadge(
-            text = "SIN RED",
+            text = "SIN DATOS",
             enabled = false,
             tone = UanTone.Danger,
             emphasis = UanBadgeEmphasis.Tonal,

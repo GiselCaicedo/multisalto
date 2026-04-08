@@ -16,7 +16,7 @@ import com.uan.designsystem.uikit.theme.UanTheme
 import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 /* ═══════════════════════════════════════════════════════════════
- * Preview 1 — Ninguno seleccionado
+ * Preview 1 — Estado base
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -32,8 +32,8 @@ private fun ToolbarNoneSelectedPreview() {
             UanToolbar(
                 selectedIndex = -1,
                 onItemSelected = {},
-                startContentDescription = "Informacion",
-                endContentDescription = "SOS",
+                startContentDescription = "Inicio",
+                endContentDescription = "Accion",
                 startContent = {
                     Icon(
                         imageVector = Icons.Outlined.Info,
@@ -44,7 +44,7 @@ private fun ToolbarNoneSelectedPreview() {
                 },
                 endContent = {
                     Text(
-                        text = "SOS",
+                        text = "ACCION",
                         color = tokens.colors.muted,
                         style = tokens.typography.distance,
                     )
@@ -55,7 +55,7 @@ private fun ToolbarNoneSelectedPreview() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
- * Preview 2 — SOS seleccionado (item fin)
+ * Preview 2 — Estado final seleccionado
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -71,8 +71,8 @@ private fun ToolbarEndSelectedPreview() {
             UanToolbar(
                 selectedIndex = 1,
                 onItemSelected = {},
-                startContentDescription = "Informacion",
-                endContentDescription = "SOS",
+                startContentDescription = "Inicio",
+                endContentDescription = "Accion",
                 startContent = {
                     Icon(
                         imageVector = Icons.Outlined.Info,
@@ -83,7 +83,7 @@ private fun ToolbarEndSelectedPreview() {
                 },
                 endContent = {
                     Text(
-                        text = "SOS",
+                        text = "ACCION",
                         color = tokens.colors.onPrimary,
                         style = tokens.typography.distance,
                     )
@@ -94,7 +94,7 @@ private fun ToolbarEndSelectedPreview() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
- * Preview 3 — Info seleccionado (item inicio)
+ * Preview 3 — Estado inicial seleccionado
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -110,8 +110,8 @@ private fun ToolbarStartSelectedPreview() {
             UanToolbar(
                 selectedIndex = 0,
                 onItemSelected = {},
-                startContentDescription = "Informacion",
-                endContentDescription = "SOS",
+                startContentDescription = "Inicio",
+                endContentDescription = "Accion",
                 startContent = {
                     Icon(
                         imageVector = Icons.Outlined.Info,
@@ -122,7 +122,7 @@ private fun ToolbarStartSelectedPreview() {
                 },
                 endContent = {
                     Text(
-                        text = "SOS",
+                        text = "ACCION",
                         color = tokens.colors.muted,
                         style = tokens.typography.distance,
                     )
@@ -150,8 +150,8 @@ private fun ToolbarDisabledPreview() {
                 selectedIndex = 0,
                 onItemSelected = {},
                 enabled = false,
-                startContentDescription = "Informacion",
-                endContentDescription = "SOS",
+                startContentDescription = "Inicio",
+                endContentDescription = "Accion",
                 startContent = {
                     Icon(
                         imageVector = Icons.Outlined.Info,
@@ -162,7 +162,7 @@ private fun ToolbarDisabledPreview() {
                 },
                 endContent = {
                     Text(
-                        text = "SOS",
+                        text = "ACCION",
                         color = tokens.colors.muted,
                         style = tokens.typography.distance,
                     )
@@ -187,12 +187,12 @@ private fun ToolbarAllStatesPreview() {
                 .padding(tokens.spacing.lg),
             verticalArrangement = Arrangement.spacedBy(tokens.spacing.md),
         ) {
-            // Ninguno
+            // Estado base
             UanToolbar(
                 selectedIndex = -1,
                 onItemSelected = {},
-                startContentDescription = "Informacion",
-                endContentDescription = "SOS",
+                startContentDescription = "Inicio",
+                endContentDescription = "Accion",
                 startContent = {
                     Icon(
                         imageVector = Icons.Outlined.Info,
@@ -203,18 +203,18 @@ private fun ToolbarAllStatesPreview() {
                 },
                 endContent = {
                     Text(
-                        text = "SOS",
+                        text = "ACCION",
                         color = tokens.colors.muted,
                         style = tokens.typography.distance,
                     )
                 },
             )
-            // SOS seleccionado
+            // Estado final seleccionado
             UanToolbar(
                 selectedIndex = 1,
                 onItemSelected = {},
-                startContentDescription = "Informacion",
-                endContentDescription = "SOS",
+                startContentDescription = "Inicio",
+                endContentDescription = "Accion",
                 startContent = {
                     Icon(
                         imageVector = Icons.Outlined.Info,
@@ -225,18 +225,18 @@ private fun ToolbarAllStatesPreview() {
                 },
                 endContent = {
                     Text(
-                        text = "SOS",
+                        text = "ACCION",
                         color = tokens.colors.onPrimary,
                         style = tokens.typography.distance,
                     )
                 },
             )
-            // Info seleccionado
+            // Estado inicial seleccionado
             UanToolbar(
                 selectedIndex = 0,
                 onItemSelected = {},
-                startContentDescription = "Informacion",
-                endContentDescription = "SOS",
+                startContentDescription = "Inicio",
+                endContentDescription = "Accion",
                 startContent = {
                     Icon(
                         imageVector = Icons.Outlined.Info,
@@ -247,7 +247,7 @@ private fun ToolbarAllStatesPreview() {
                 },
                 endContent = {
                     Text(
-                        text = "SOS",
+                        text = "ACCION",
                         color = tokens.colors.muted,
                         style = tokens.typography.distance,
                     )

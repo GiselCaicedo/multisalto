@@ -29,7 +29,7 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 
 /* ═══════════════════════════════════════════════════════════════
  * Preview 1 — Alert Modal (Danger tone)
- * Escenario: Alerta de evacuacion inmediata.
+ * Escenario: Ejemplo de alerta.
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -37,16 +37,16 @@ import com.uan.designsystem.uikit.theme.UanThemeTokens
 private fun AlertDangerModalPreview() {
     UanTheme {
         UanModalContentPreview(
-            title = "\u00a1Atencion!",
-            body = "Se ha detectado una emergencia en tu zona. Sigue las instrucciones de evacuacion inmediatamente.",
+            title = "Titulo",
+            body = "Texto de ejemplo para validar el modal y sus acciones.",
             tone = UanTone.Danger,
             primaryAction = UanModalAction(
-                label = "EVACUAR",
+                label = "ACCION 1",
                 onClick = {},
                 style = UanButtonStyle.Danger,
             ),
             secondaryAction = UanModalAction(
-                label = "IGNORAR",
+                label = "ACCION 2",
                 onClick = {},
                 style = UanButtonStyle.Secondary,
             ),
@@ -56,7 +56,7 @@ private fun AlertDangerModalPreview() {
 
 /* ═══════════════════════════════════════════════════════════════
  * Preview 2 — Alert Modal (Success tone)
- * Escenario: Paciente estabilizado correctamente.
+ * Escenario: Ejemplo de confirmacion.
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -64,8 +64,8 @@ private fun AlertDangerModalPreview() {
 private fun AlertSuccessModalPreview() {
     UanTheme {
         UanModalContentPreview(
-            title = "\u00a1Atencion!",
-            body = "El paciente ha sido estabilizado correctamente.",
+            title = "Titulo",
+            body = "Texto de ejemplo para validar el modal y sus acciones.",
             tone = UanTone.Success,
             primaryAction = UanModalAction(
                 label = "CONTINUAR",
@@ -83,7 +83,7 @@ private fun AlertSuccessModalPreview() {
 
 /* ═══════════════════════════════════════════════════════════════
  * Preview 3 — Content Modal with close button, media & navigation
- * Escenario: Instrucciones de primeros auxilios con imagen.
+ * Escenario: Contenido con media y navegacion.
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -94,7 +94,7 @@ private fun ContentModalWithDismissPreview() {
         UanModalContentPreview(
             title = "Titulo",
             subtitle = "Subtitulo",
-            body = "Instrucciones detalladas para el procedimiento de primeros auxilios.",
+            body = "Texto de ejemplo con subtitulo y contenido principal.",
             tone = UanTone.Neutral,
             showCloseButton = true,
             media = {
@@ -108,7 +108,7 @@ private fun ContentModalWithDismissPreview() {
             },
             navigationAction = {
                 UanIconButton(
-                    contentDescription = "Volver",
+                    contentDescription = "Icono de volver",
                     onClick = {},
                     borderColor = tokens.colors.outline,
                     shape = RoundedCornerShape(tokens.shapes.smallRadius),
@@ -121,7 +121,7 @@ private fun ContentModalWithDismissPreview() {
                 }
             },
             secondaryAction = UanModalAction(
-                label = "LABEL",
+                label = "ACCION",
                 onClick = {},
                 style = UanButtonStyle.Secondary,
             ),
@@ -131,7 +131,7 @@ private fun ContentModalWithDismissPreview() {
 
 /* ═══════════════════════════════════════════════════════════════
  * Preview 4 — Media Carousel Modal
- * Escenario: Galeria de pasos visuales de un procedimiento.
+ * Escenario: Galeria de contenido.
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -227,7 +227,7 @@ private fun MediaCarouselModalPreview() {
 
 /* ═══════════════════════════════════════════════════════════════
  * Preview 5 — Critical Alert (full urgency)
- * Escenario: Paro cardiaco — maxima urgencia.
+ * Escenario: Alerta de prioridad alta.
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -235,16 +235,16 @@ private fun MediaCarouselModalPreview() {
 private fun CriticalAlertModalPreview() {
     UanTheme {
         UanModalContentPreview(
-            title = "\u00a1EMERGENCIA!",
-            body = "Paro cardiaco detectado. Inicie RCP inmediatamente. Siga las instrucciones del DEA.",
+            title = "Titulo",
+            body = "Texto de ejemplo para validar una alerta critica.",
             tone = UanTone.Critical,
             primaryAction = UanModalAction(
-                label = "INICIAR RCP",
+                label = "ACCION 1",
                 onClick = {},
                 style = UanButtonStyle.Critical,
             ),
             secondaryAction = UanModalAction(
-                label = "LLAMAR 911",
+                label = "ACCION 2",
                 onClick = {},
                 style = UanButtonStyle.Danger,
             ),
@@ -254,7 +254,7 @@ private fun CriticalAlertModalPreview() {
 
 /* ═══════════════════════════════════════════════════════════════
  * Preview 6 — Disabled actions state
- * Escenario: Modal con acciones deshabilitadas (esperando input).
+ * Escenario: Modal con acciones deshabilitadas.
  * ═══════════════════════════════════════════════════════════════ */
 
 @Preview(showBackground = true, backgroundColor = 0xFF090B0F)
@@ -262,8 +262,8 @@ private fun CriticalAlertModalPreview() {
 private fun DisabledActionsModalPreview() {
     UanTheme {
         UanModalContentPreview(
-            title = "Confirmar procedimiento",
-            body = "Debe aceptar los terminos antes de continuar con el procedimiento de emergencia.",
+            title = "Confirmar accion",
+            body = "Debe aceptar los terminos antes de continuar.",
             tone = UanTone.Warning,
             primaryAction = UanModalAction(
                 label = "ACEPTAR",
@@ -290,11 +290,11 @@ private fun DisabledActionsModalPreview() {
 private fun LoadingActionModalPreview() {
     UanTheme {
         UanModalContentPreview(
-            title = "Enviando alerta",
-            body = "Notificando a los servicios de emergencia cercanos...",
+            title = "Cargando",
+            body = "Texto de ejemplo mientras se procesa la accion.",
             tone = UanTone.Info,
             primaryAction = UanModalAction(
-                label = "ENVIANDO",
+                label = "CARGANDO",
                 onClick = {},
                 style = UanButtonStyle.Primary,
                 loading = true,

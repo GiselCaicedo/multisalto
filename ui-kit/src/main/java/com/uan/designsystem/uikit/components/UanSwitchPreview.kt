@@ -27,8 +27,8 @@ private fun VisionNocturnaActivaPreview() {
             checked = true,
             onCheckedChange = {},
             tone = UanTone.Info,
-            checkedContentDescription = "Vision nocturna activada",
-            uncheckedContentDescription = "Vision nocturna desactivada",
+            checkedContentDescription = "Opcion activada",
+            uncheckedContentDescription = "Opcion desactivada",
         )
     }
 }
@@ -41,8 +41,8 @@ private fun IluminacionManualDesactivadaPreview() {
             checked = false,
             onCheckedChange = {},
             tone = UanTone.Info,
-            checkedContentDescription = "Iluminacion manual activada",
-            uncheckedContentDescription = "Iluminacion manual desactivada",
+            checkedContentDescription = "Opcion activada",
+            uncheckedContentDescription = "Opcion desactivada",
         )
     }
 }
@@ -56,19 +56,19 @@ private fun AlertaQuimicaCriticaPreview() {
             checked = true,
             onCheckedChange = {},
             tone = UanTone.Critical,
-            checkedContentDescription = "Alerta quimica activa",
-            uncheckedContentDescription = "Alerta quimica inactiva",
+            checkedContentDescription = "Opcion activada",
+            uncheckedContentDescription = "Opcion desactivada",
             checkedContent = {
                 Icon(
                     imageVector = Icons.Default.WarningAmber,
-                    contentDescription = "Alerta critica",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.critical,
                 )
             },
             uncheckedContent = {
                 Icon(
                     imageVector = Icons.Default.WarningAmber,
-                    contentDescription = "Alerta critica inactiva",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.muted,
                 )
             },
@@ -85,19 +85,19 @@ private fun RadioOperativaActivaPreview() {
             checked = true,
             onCheckedChange = {},
             tone = UanTone.Success,
-            checkedContentDescription = "Radio operativa activada",
-            uncheckedContentDescription = "Radio operativa desactivada",
+            checkedContentDescription = "Opcion activada",
+            uncheckedContentDescription = "Opcion desactivada",
             checkedContent = {
                 Icon(
                     imageVector = Icons.Default.NotificationsActive,
-                    contentDescription = "Radio activa",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.success,
                 )
             },
             uncheckedContent = {
                 Icon(
                     imageVector = Icons.Default.NotificationsOff,
-                    contentDescription = "Radio inactiva",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.muted,
                 )
             },
@@ -115,19 +115,19 @@ private fun SensorDeshabilitadoPreview() {
             onCheckedChange = {},
             enabled = false,
             tone = UanTone.Warning,
-            checkedContentDescription = "Sensor secundario activado",
-            uncheckedContentDescription = "Sensor secundario desactivado",
+            checkedContentDescription = "Opcion activada",
+            uncheckedContentDescription = "Opcion desactivada",
             checkedContent = {
                 Icon(
                     imageVector = Icons.Default.Brightness2,
-                    contentDescription = "Sensor activo",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.warning,
                 )
             },
             uncheckedContent = {
                 Icon(
                     imageVector = Icons.Default.LightMode,
-                    contentDescription = "Sensor inactivo",
+                    contentDescription = "Icono de estado",
                     tint = tokens.colors.muted,
                 )
             },
