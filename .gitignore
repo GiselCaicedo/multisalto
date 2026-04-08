@@ -13,18 +13,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-
-# Carpetas de apoyo (no subir)
-/APK/
-/DOC/
-/FIGMA/
-/apk/
-/doc/
-/figma/
-
-# Archivos sensibles/no recomendados en Android/Kotlin
-*.jks
-*.keystore
-key.properties
-keystore.properties
-signing.properties

@@ -22,6 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "REDSCATE"
-include(":app")
+rootProject.name = "UAN-DESIGN-SYSTEM"
 include(":ui-kit")
